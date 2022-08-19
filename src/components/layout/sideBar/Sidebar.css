@@ -1,0 +1,90 @@
+.sidebar{
+    
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: all 0.7s;
+    border-right: 1px solid black;
+}
+
+.sidebar .sidebar-header{
+    height: 90px;
+    padding-left: 1.2rem;
+}
+
+.sidebar .sidebar-header .arrow{
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    cursor: pointer;
+}
+.sidebar .sidebar-header img{
+    height: 40px;
+    width: 40px;
+}
+.sidebar .menu-data{
+    position: relative;
+    height: fit-content;
+    padding-right: 5px;
+    transition: ease-out 0.8s;
+}
+
+.sidebar .menu-data ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.sidebar .menu-data li{
+    height: 40px;
+    position: relative;
+}
+.sidebar .menu-data .nav-link{
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    height: 35px;
+    margin: 0.65rem 0;
+    padding: 0 0.7rem;
+}
+.sidebar .menu-data .nav-link .nav-icon{
+    align-items: center;
+    display: flex;
+    height: 33px;
+    justify-content: center;
+    margin-left: 12px;
+    margin-right: 22px;
+    min-width: 33px;
+    width: 33px;
+}
+
+
+
+
+/* .active-link{
+    display: flex;
+    align-items: center;
+    border-right: 3px;
+    border: #433895;
+    width: 100%;
+    height: 100%;
+    color: black;
+
+}
+.active-link:hover{
+    color: #21268f;
+}
+.normal-link{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: black;
+
+}
+.normal-link:hover{
+    color: #21268f;
+} */

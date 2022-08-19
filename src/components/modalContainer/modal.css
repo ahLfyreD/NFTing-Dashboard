@@ -1,0 +1,134 @@
+.modal{
+    inset: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    /* background: black; */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    
+}
+
+.form{
+    height: fit-content;
+    width: 50%;
+    position: relative;
+    border-radius: 10px;
+    padding: 56px;
+    background: white;
+
+}
+.form .form-input{
+    width: 350px;
+    
+}
+
+.form .close{
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    top: 12px;
+    right: 20px;
+    color: #e8dfec;
+}
+
+.form h1{
+    font-size: 34px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.form-container{
+    width: 100%;
+    display: flex;
+    
+    align-items: center;
+    height: 64px;
+    border-color: #e8dfec;
+    border-radius: 15px;
+    border: 2px solid #e8dfec;
+    padding: 0 8px;
+    margin-top: 40px;
+}
+
+.form-container .password-icon{
+    border: none;
+    font-size: 25px;
+}
+
+.form .continue-btn{
+    width: 100%;
+    height: 64px;
+    color: #fff;
+    background: #1e3a8a;
+    border-radius: 15px;
+    border: none;
+    font-size: 28px;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.forget-link .link{
+    cursor: pointer;
+    color: #433895;
+    text-decoration: underline;
+}
+.option-link{
+    margin-top: 30px;
+}
+
+.option-link h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.option-link .link{
+    cursor: pointer;
+    color: #433895;
+
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+.divider{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-color: #e8dfec;
+    border-top: 2px solid #e8dfec;
+    margin-top: 40px;
+    position: relative;
+
+}
+
+.divider span{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: -16px;
+}
+
+.btn-social{
+    width: 100%;
+    height: fit-content;
+    margin-top: 16px;
+    position: relative;
+    display: flex;
+    color: #1e3a8a;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* reset container styling */
+.modal-container{
+    width: 50%;
+    height: fit-content;
+    padding: 10px;
+    
+}

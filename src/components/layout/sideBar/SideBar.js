@@ -1,10 +1,10 @@
-import "./SideBar.css";
+import "./Sidebar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as BsIcons from "react-icons/bs";
 import { MenuData } from "./menu/MenuData";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import icon from "../../../asset/images/icon.svg";
-import side from "../../../asset/images/side.png";
+// import side from "../../../asset/images/side.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -15,9 +15,9 @@ const SideBar = () => {
   }
   const { t } = useTranslation(["sidebar"])
   const activeLink =
-  "active-link text-black font-mono h-full w-full font-bold  gap-x-5 flex items-center border-r-4 border-blue-500  hover:text-primary";
+  "active-link";
   const normalLink =
-  "normal-link text-black font-mono h-full w-full font-bold  gap-x-5 flex items-center  hover:text-primary";
+  "normal-link";
 
   // const navLinkStyles = ({ isActive}) => {
   //   return {
@@ -27,60 +27,57 @@ const SideBar = () => {
 
   return (
     <div
-      className={`${open ? "w-60" : "w-24"} 
-    duration-500 h-screen sticky top-0 border-r border-light`}
+      className={`sidebar`}
+      style={open ? {width: 250} : {width: 70}}
+
     >
-      <div className="flex gap-x-4 h-24 w-full sticky top-0 bg-white items-center">
+       <div className="sidebar-header position-relative d-flex w-100  bg-white align-items-center">
         <img
           src={icon}
-          className={`ml-4 h-12 w-12 cursor-pointer duration-500`}
+          className={`ml-4 cursor-pointer`}
         />
 
         <h1
-          className={`text-blue-900 origin-left font-medium  text-4xl ${
-            !open && "scale-0"
+          className={`mx-3 ${
+            !open && "d-none"
           }`}
         >
           NFTing
         </h1>
 
         <BsIcons.BsArrowLeftCircle
-          className={`absolute cursor-pointer text-blue-900 
-                  text-xl  top-10 bg-white rounded-full ${
-                    !open && "rotate-180"
-                  } ${open ? "right-3" : "-right-3"}`}
+          className="arrow"
           onClick={iconOnClick}
-          
         
         />
       </div>
-      <div className={`h-fit sticky top-24`}>
-        <ul className="w-full">
+      <div className="menu-data">
+        <ul className="w-100 p-0 flex-column">
           {MenuData.map((item, index) => (
             <li
               key={index}
-              className={`block h-10 cursor-pointer`}
+              className="nav-item d-block"
             >
-              <NavLink
+              <Link
                 to={item.path}
-                className={({ isActive }) => 
-              isActive ? activeLink : normalLink}
+                className="nav-link"
               >
-                <i className={` h-7 w-7 ml-7 p-1 text-center text-xl rounded-lg`}>{item.icons}</i>
+                <i className="nav-icon">{item.icons}</i>
                 <span
                   className={`${
-                    !open && "hidden"
-                  } origin-left font-nunito duration-400`}
+                    !open && "d-none"
+                  }`}
+                  style={{}}
                 >
                   {t(item.title)}
                 </span>
-              </NavLink>
+              </Link>
             </li>
           ))}
         </ul>
-        <div className={`mx-4 mt-4 ${!open && "hidden"}`}>
+        {/* <div className={`mx-4 mt-4 ${!open && "hidden"}`}>
           <img src={side} alt="" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

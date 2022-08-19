@@ -1,0 +1,21 @@
+{
+    "login_to_nfting": "Se connecter à NFTing",
+    "signup_to_nfting": "S'inscrire à NFTing",
+    "first_name": "Prenom",
+    "last_name": "Nom de famille",
+    "email_address": "Adresse e-mail",
+    "password": "Mot de passe",
+    "forget_password": "Mot de passe oublie?",
+    "continue": "Continuer",
+    "dont_have_an_account": "Vous n'avez pas de compte?",
+    "already_have_an_account": "Vous avez déjà un compte?",
+    "login": "Se Connecter",
+    "sign_up": "S'inscrire",
+    "or": "OU",
+    "login_with_google": "Se connecter avec Google",
+    "login_with_facebook": "Se connecter avec Facebook",
+    "login_with_twitter": "Se connecter avec Twitter",
+    "signup_with_google": "S'inscrire avec Google",
+    "signup_with_facebook": "S'inscrire avec Facebook",
+    "signup_with_twitter": "S'inscrire avec Twitter"
+}
