@@ -17,14 +17,14 @@ import HomePage from "@components/layout/sections/home/homepage/HomePage";
 import SideBar from "@components/layout/sidebar/SideBar";
 import Header from "@components/layout/head/Header";
 import LoginModal from "@components/modalContainer/LoginModal";
-// import ResetModal from "@components/modalContainer/ResetModal";
+import ResetModal from "@components/modalContainer/ResetModal";
 import SignUpModal from "@components/modalContainer/SignUpModal";
 
 import { useState } from "react";
 
 function App() {
   const [bar, setBar] = useState(true);
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(true);
   const LoginhandleOnClose = () => setShowLoginModal(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const SignUphandleOnClose = () => setShowSignUpModal(false);
@@ -63,37 +63,37 @@ function App() {
 
 
         </div>
-         <div>
-            <LoginModal
-              onClose={LoginhandleOnClose}
-              visible={showLoginModal}
-              onClick={() => {
-                setShowResetModal(true);
-                setShowLoginModal(false);
-              }}
-              SignUp={() => {
-                setShowSignUpModal(true);
-                setShowLoginModal(false);
-              }}
-            />
-          </div>
-         <div>
-            <SignUpModal
-              onClose={SignUphandleOnClose}
-              visible={showSignUpModal}
-              login={() => {
-                setShowSignUpModal(false);
-                setShowLoginModal(true)
-              }}
-            />
-          </div>
-         { /* <div>
-            <ResetModal visible={showResetModal} onClose={ResethandleOnClose}
-              login={() => {
-                setShowResetModal(false);
-                setShowLoginModal(true)
-              }} />
-          </div>  */}
+        <div>
+          <LoginModal
+            toggle={LoginhandleOnClose}
+            modal={showLoginModal}
+            onClick={() => {
+              setShowResetModal(true);
+              setShowLoginModal(false);
+            }}
+            SignUp={() => {
+              setShowSignUpModal(true);
+              setShowLoginModal(false);
+            }}
+          />
+        </div>
+        <div>
+          <SignUpModal
+            toggle={SignUphandleOnClose}
+            modal={showSignUpModal}
+            login={() => {
+              setShowSignUpModal(false);
+              setShowLoginModal(true)
+            }}
+          />
+        </div>
+        <div>
+          <ResetModal modal={showResetModal} toggle={ResethandleOnClose}
+            login={() => {
+              setShowResetModal(false);
+              setShowLoginModal(true)
+            }} />
+        </div>
       </>
     </Router>
     // </Suspense>
