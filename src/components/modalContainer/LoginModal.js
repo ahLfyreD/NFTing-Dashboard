@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGroupText, Button, FormGroup } from 'reactstrap'
 import { useState, useEffect } from "react";
 
-const LoginModal = ({ modal, visible, onClose, toggle, args, onClick }) => {
+const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp}) => {
   const [state, setState] = useState(false);
 
   const { t } = useTranslation(["modal"])
@@ -121,7 +121,7 @@ const LoginModal = ({ modal, visible, onClose, toggle, args, onClick }) => {
           </Form>
 
           <div className="option-link">
-            <h2>{t('dont_have_an_account')} <span className="link">{t('sign_up')}</span></h2>
+            <h2>{t('dont_have_an_account')} <span className="link" onClick={SignUp}>{t('sign_up')}</span></h2>
           </div>
           <div
             className="divider"

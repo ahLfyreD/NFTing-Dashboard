@@ -15,7 +15,7 @@ const ResetModal = ({ visible, onClose, modal, toggle, args, login }) => {
     <div>
       <Modal isOpen={modal} toggle={toggle} {...args} contentClassName='p-3'>
         <ModalHeader className="border-0" toggle={toggle}>
-          <div className="title">
+          <div className="title" onClick={login}>
             <span className="title-icon"><BiIcons.BiArrowBack /></span>
             Back to Login
           </div>

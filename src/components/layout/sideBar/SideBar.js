@@ -7,6 +7,7 @@ import icon from "../../../asset/images/icon.svg";
 // import side from "../../../asset/images/side.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import  NFTlogo  from "@asset/images/NFTingHeader.png";
 
 const SideBar = () => {
   const [open, setOpen] = useState(true);
@@ -37,13 +38,14 @@ const SideBar = () => {
           className={`ml-4 cursor-pointer`}
         />
 
-        <h1
-          className={`mx-3 ${
+        <img
+          src={NFTlogo}
+          className={` ${
             !open && "d-none"
           }`}
-        >
-          NFTing
-        </h1>
+          style={{height: 40, width: 150,}}
+        />
+          
 
         <BsIcons.BsArrowLeftCircle
           className="arrow"

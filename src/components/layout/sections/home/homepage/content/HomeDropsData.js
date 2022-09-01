@@ -10,7 +10,7 @@ export const HomeDropsData = [
     collectorName: 'Annie Alfred',
   },
   {
-    nft: '../../../../asset/images/icon.svg',
+    nft: {load},
     nftName: 'NFTing Logo',
     collectorImage: '../../../../asset/images/picture.jpg',
     collectorName: 'Annie Alfred',

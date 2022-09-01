@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NewsFeed from "@components/layout/sections/news-feed/NewsFeed";
 import Explore from "@components/layout/sections/explore/Explore";
 import MarketStat from "@components/layout/sections/market-stat/MarketStat";
-// import Footer from '@components/layout/footer/Footer'
+import Footer from '@components/layout/footer/Footer'
 import HomePage from "@components/layout/sections/home/homepage/HomePage";
 import SideBar from "@components/layout/sidebar/SideBar";
 import Header from "@components/layout/head/Header";
@@ -24,7 +24,7 @@ import { useState } from "react";
 
 function App() {
   const [bar, setBar] = useState(true);
-  const [showLoginModal, setShowLoginModal] = useState(true);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const LoginhandleOnClose = () => setShowLoginModal(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const SignUphandleOnClose = () => setShowSignUpModal(false);
@@ -35,28 +35,33 @@ function App() {
     // <Suspense>
     <Router>
       <>
-        <div className="main-container">
-          <div className="d-flex">
-            <div>
-              <SideBar />
-            </div>
-            <div
-              className="container-fluid p-0"
-            >
-              <div className="">
-                <Header
-                  loginClick={() => setShowLoginModal(true)}
-                  signUpClick={() => setShowSignUpModal(true)} />
+        <div className="h-100">
+          <div className="app-container">
+            <div className="d-flex">
+              <div>
+                <SideBar />
               </div>
+              <div
+                className="p-0 container-fluid" style={{}}
+              >
+                <div className="">
+                  <Header
+                    loginClick={() => setShowLoginModal(true)}
+                    signUpClick={() => setShowSignUpModal(true)} />
+                </div>
 
-              {/* <div>
-                <Routes>
-                  <Route path="/explore" element={<Explore />} />
-                  <Route path="/marketstatistics" element={<MarketStat />} />
-                  <Route path="/newsfeed" element={<NewsFeed />} />
-                  <Route path="/" element={<HomePage />} />
-                </Routes>
-              </div> */}
+                <div className="app-content">
+                  <Routes>
+                     <Route path="/explore" element={<Explore />} />
+                  {/*<Route path="/marketstatistics" element={<MarketStat />} />
+                  <Route path="/newsfeed" element={<NewsFeed />} /> */}
+                    <Route path="/" element={<HomePage />} />
+                  </Routes>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Footer />
             </div>
           </div>
 

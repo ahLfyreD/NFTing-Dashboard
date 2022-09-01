@@ -1,43 +1,40 @@
-// import TopHome from "./content/tophome/TopHome";
-// import HomeTrend from "./content/HomeTrend";
-// import HomeDrops from "./content/HomeDrops";
-// import HomeOpt from "./content/HomeOpt";
-// import HomeCreate from "./content/HomeCreate";
-// import HomeNews from "./content/HomeNews";
-// import About from "./content/About";
+import TopHome from "./content/tophome/TopHome";
+import HomeTrend from "./content/HomeTrend";
+import HomeDrops from "./content/HomeDrops";
+import HomeCreate from "./content/HomeCreate";
+import HomeNews from "./content/HomeNews";
+import About from "./content/About";
 
-// const HomePage = () => {
-//   return (
-//     <div className="w-full h-full py-2 relative">
-//       <div>
-//         <TopHome />
-//       </div>
+const HomePage = () => {
+  return (
+    <div className="h-100 p-4 position-relative">
+      <div>
+        <TopHome />
+      </div>
 
-//       {/* <div>
-//         <HomeTrend />
-//       </div> */}
+      {/* <div>
+        <HomeTrend />
+      </div> */}
 
-//       <div>
-//         <HomeDrops />
-//       </div>
+      <div>
+        <HomeDrops />
+      </div>
 
-//      <div >
-//         <HomeOpt />
-//       </div>
 
-//       <div>
-//         <HomeCreate />
-//       </div>
 
-//       <div>
-//         <HomeNews />
-//       </div>
+      <div>
+        <HomeCreate />
+      </div>
 
-//       {/* <div>
-//         <About />
-//       </div> */}
-//     </div>
-//   );
-// };
+      <div>
+        <HomeNews />
+      </div>
 
-// export default HomePage;
+      <div>
+        <About />
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;
