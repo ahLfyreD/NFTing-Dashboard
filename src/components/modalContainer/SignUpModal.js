@@ -87,7 +87,8 @@ const SignUpModal = ({ visible, onClose, login, modal, args, toggle }) => {
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle} {...args} contentClassName="p-4">
-        <ModalHeader className="border-0" toggle={toggle}>{t('signup_to_nfting')}</ModalHeader>
+        <ModalHeader className="border-0" toggle={toggle}>
+        <h1 className="head-title" style={{marginTop: 30,}}>{t('signup_to_nfting')}</h1></ModalHeader>
         <ModalBody>
           <Form>
 

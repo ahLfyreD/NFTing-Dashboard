@@ -4,7 +4,7 @@ import * as BsIcons from "react-icons/bs";
 import { MenuData } from "./menu/MenuData";
 import { Link } from "react-router-dom";
 import icon from "../../../asset/images/icon.svg";
-// import side from "../../../asset/images/side.png";
+import side from "../../../asset/images/side.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import  NFTlogo  from "@asset/images/NFTingHeader.png";
@@ -32,7 +32,7 @@ const SideBar = () => {
       style={open ? {width: 250} : {width: 70}}
 
     >
-       <div className="sidebar-header position-relative d-flex w-100  bg-white align-items-center">
+       <div className="sidebar-header sticky-top d-flex w-100  bg-white align-items-center">
         <img
           src={icon}
           className={`ml-4 cursor-pointer`}
@@ -77,9 +77,9 @@ const SideBar = () => {
             </li>
           ))}
         </ul>
-        {/* <div className={`mx-4 mt-4 ${!open && "hidden"}`}>
+        <div className={`mx-4 mt-4 ${!open && "visually-hidden"}`}>
           <img src={side} alt="" />
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGroupText, Button, FormGroup } from 'reactstrap'
 import { useState, useEffect } from "react";
 
-const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp}) => {
+const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp }) => {
   const [state, setState] = useState(false);
 
   const { t } = useTranslation(["modal"])
@@ -71,7 +71,9 @@ const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp}) =
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle} {...args} contentClassName="p-4">
-        <ModalHeader className="border-0" toggle={toggle}>{t('login_to_nfting')}</ModalHeader>
+        <ModalHeader className="border-0" toggle={toggle}>
+          <h1 className="head-title" style={{marginTop: 30,}}>{t('login_to_nfting')}</h1>
+        </ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>

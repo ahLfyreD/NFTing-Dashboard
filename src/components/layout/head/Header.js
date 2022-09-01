@@ -58,7 +58,7 @@ const Header = ({ loginClick, signUpClick }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg d-flex position-relative justify-content-between bg-white p-2">
+      <nav className="navbar navbar-expand-lg d-flex sticky-top justify-content-between bg-white p-2">
         <div className="container-fluid">
 
           <div className="d-flex p-1 rounded rounded-3  border border-2">
