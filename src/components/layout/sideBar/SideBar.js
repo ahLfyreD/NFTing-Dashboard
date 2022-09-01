@@ -69,7 +69,7 @@ const SideBar = () => {
                   className={`${
                     !open && "d-none"
                   }`}
-                  style={{}}
+                  style={{fontFamily: 'nunito'}}
                 >
                   {t(item.title)}
                 </span>

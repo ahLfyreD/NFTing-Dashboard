@@ -44,7 +44,7 @@ function App() {
               <div
                 className="p-0 container-fluid" style={{}}
               >
-                <div className="">
+                <div className="sticky-top">
                   <Header
                     loginClick={() => setShowLoginModal(true)}
                     signUpClick={() => setShowSignUpModal(true)} />
