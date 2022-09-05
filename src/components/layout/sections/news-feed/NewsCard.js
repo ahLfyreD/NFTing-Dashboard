@@ -1,4 +1,4 @@
-import { NewsData } from "./NewsData"
+
 import './NewsFeed.css'
 import * as BiIcons from "react-icons/bi";
 import nft from '@asset/images/nft.png'

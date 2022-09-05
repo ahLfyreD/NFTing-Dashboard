@@ -6,7 +6,7 @@ import * as BsIcons from "react-icons/bs";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import './modal.css'
-import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGroupText, Button, FormGroup } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, Form, Input, InputGroup, InputGroupText, FormGroup } from 'reactstrap'
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 

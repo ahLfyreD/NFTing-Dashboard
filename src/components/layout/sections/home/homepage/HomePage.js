@@ -1,5 +1,5 @@
 import TopHome from "./content/tophome/TopHome";
-import HomeTrend from "./content/HomeTrend";
+// import HomeTrend from "./content/HomeTrend";
 import HomeDrops from "./content/HomeDrops";
 import HomeCreate from "./content/HomeCreate";
 import HomeNews from "./content/HomeNews";

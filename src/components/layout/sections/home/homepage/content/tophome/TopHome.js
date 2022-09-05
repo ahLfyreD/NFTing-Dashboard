@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { MdMargin } from "react-icons/md";
+import React from "react";
 import image1 from "../../../../../../../asset/images/banner.png";
 
 // import load from "@asset/images/image2.jpg";

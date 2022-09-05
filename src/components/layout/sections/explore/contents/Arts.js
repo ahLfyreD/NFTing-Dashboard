@@ -4,12 +4,12 @@ import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { DropsData } from "./DropsData.js";
 
 const Arts = () => {
-    const breakPoints = [
-      { width: 1, itemsToShow: 1 },
-      { width: 500, itemsToShow: 3 },
-      { width: 768, itemsToShow: 4 },
-      { width: 1020, itemsToShow: 5 },
-    ];
+    // const breakPoints = [
+    //   { width: 1, itemsToShow: 1 },
+    //   { width: 500, itemsToShow: 3 },
+    //   { width: 768, itemsToShow: 4 },
+    //   { width: 1020, itemsToShow: 5 },
+    // ];
     return (
       <>
               <div className="section">

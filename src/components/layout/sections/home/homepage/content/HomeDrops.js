@@ -1,31 +1,31 @@
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 
 import "react-multi-carousel/lib/styles.css";
-import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import load from "../../../../../../asset/images/image2.jpg";
-// import { Card } from "@components/card/Card";
-import { HomeDropsData } from "./HomeDropsData.js";
-import { HomeOptData } from "./HomeOptData.js";
+// import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+// import load from "../../../../../../asset/images/image2.jpg";
+// // import { Card } from "@components/card/Card";
+// import { HomeDropsData } from "./HomeDropsData.js";
+// import { HomeOptData } from "./HomeOptData.js";
 
 const HomeDrops = () => {
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: {max: 4000, min: 3000},
-            items: 5
-        },
-        desktop: {
-            breakpoint: {max: 3000, min: 1024},
-            items:4
-        },
-        tablet: {
-            breakpoint: {max: 1024, min: 464},
-            item: 3
-        },
-        mobile: {
-            breakpoint: {max: 464, min: 0},
-        items: 1
-        }
-    };
+    // const responsive = {
+    //     superLargeDesktop: {
+    //         breakpoint: {max: 4000, min: 3000},
+    //         items: 5
+    //     },
+    //     desktop: {
+    //         breakpoint: {max: 3000, min: 1024},
+    //         items:4
+    //     },
+    //     tablet: {
+    //         breakpoint: {max: 1024, min: 464},
+    //         item: 3
+    //     },
+    //     mobile: {
+    //         breakpoint: {max: 464, min: 0},
+    //     items: 1
+    //     }
+    // };
 
     return (
         <div style={{width: '100%', position: 'relative',}}>

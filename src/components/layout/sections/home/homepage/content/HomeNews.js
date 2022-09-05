@@ -8,11 +8,7 @@ import nftObject from '../../../../../../asset/images/nftObject.png'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
 
 const HomeNews = () => {
-    const featuredProducts = [
-        "../../../../../asset/images/image3.jpg",
-        "../../../../asset/images/image3.jpg",
-        "../../../../../asset/images/image3.jpg",
-    ];
+    
     return (
         <div style={{marginBottom: 40,}}>
             <div className="section">
