@@ -29,20 +29,21 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
     setIsSubmit(true);
   };
 
-  // useEffect(() => {
-  //   console.log(formErrors);
-  //   if (Object.keys(formValues).length === 0 && isSubmit) {
-  //     console.log(formValues);
-  //   }
-  // }, [formErrors]);
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formValues).length === 0 && isSubmit) {
+      console.log(formValues);
+    }
+  }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
+    const regex = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!values.email) {
       errors.email = "Email is required";
     } else if (
-      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)
+      regex.test(values.email)
     ) {
       errors.email = "This is not a valid email format!";
     }
@@ -118,7 +119,15 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
               <span className="forget-password" onClick={onClick}>{t('forget_password')}</span>
             </div>
             <div className="mt-5">
-              <button type="submit" onClick={handleFormSubmit} className="btn-continue">{t('continue')}</button>
+              <button type="submit" onClick={handleFormSubmit} className="btn-continue">{t('continue')}
+                {Object.keys(formValues).length === 0 && isSubmit ? (
+                  <div
+                    className="position-absolute confirmation-contianer bg-white"
+                  >
+                    <p>Login Successful!</p>
+                  </div>
+                ) : ""}
+              </button>
             </div>
           </Form>
 

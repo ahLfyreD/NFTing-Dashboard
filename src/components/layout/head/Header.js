@@ -1,5 +1,5 @@
 import "./Header.css";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
 
@@ -11,7 +11,7 @@ import * as FcIcons from "react-icons/fc";
 
 
 
-import { useState } from "react";
+// import { useState } from "react";
 import { useEffect } from "react";
 // import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 
@@ -29,7 +29,7 @@ const Header = ({ loginClick, signUpClick }) => {
   //   if (e.target.id === "lang") setOpen(open)
   // }
 
-  const [open, setOpen] = useState(true);
+  // const [open, setOpen] = useState(true);
   // const [englishState, setEnglishState] = useState(true)
   // const [frenchState, setFrenchState] = useState(true)
   // const englishBtn = () => {

@@ -10,7 +10,7 @@ import { Modal, ModalHeader, ModalBody, Form, Input, InputGroup, InputGroupText,
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
+const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
   const [state, setState] = useState(true);
 
   const { t } = useTranslation(["modal"])
@@ -36,19 +36,18 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    // setIsSubmit(true);
   };
 
-  // useEffect(() => {
-  //   console.log(formErrors);
-  //   if (Object.keys(formValues).length === 0 && isSubmit) {
-  //     console.log(formValues);
-  //   }
-  // }, [formErrors]);
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formValues).length === 0 && isSubmit) {
+      console.log(formValues);
+    }
+  }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
-    // const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regex = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!values.firstName) {
       errors.firstName = "*Required";
     }
@@ -58,7 +57,7 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
     if (!values.email) {
       errors.email = "Email is required";
     } else if (
-      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)
+      regex.test(values.email)
     ) {
       errors.email = "This is not a valid email format!";
     }
@@ -158,9 +157,7 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
                 {formErrors.password}
               </p>
             </FormGroup>
-            {/* <div>
-              <span className="forget-password">{t('forget_password')}</span>
-            </div> */}
+
             <div className="option-link">
               <h2>
                 {t('rules')}{" "}
@@ -169,7 +166,7 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
                 </Link>
                 ,{" "}
                 <Link to="/privacy" onClick={onClose} className="forget-password">
-                 {t('privacy')}
+                  {t('privacy')}
                 </Link>{" "}
                 {t('and')}{" "}
                 <Link to="/" onClick={onClose} className="forget-password">
@@ -180,7 +177,15 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
               </h2>
             </div>
             <div className="mt-5">
-              <button type="submit" onClick={handleFormSubmit} className="btn-continue">{t('continue')}</button>
+              <button type="submit" onClick={handleFormSubmit} className="btn-continue posiiton-relative">{t('continue')}
+                {Object.keys(formValues).length === 0 && isSubmit ? (
+                  <div
+                    className="position-absolute confirmation-contianer bg-white"
+                  >
+                    <p>Account Created!</p>
+                  </div>
+                ) : ""}
+              </button>
             </div>
           </Form>
 

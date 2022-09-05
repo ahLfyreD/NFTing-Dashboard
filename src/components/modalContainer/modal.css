@@ -26,6 +26,20 @@
     font-weight: 600;
 }
 
+.confirmation-container{
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    right: 96px;
+    top: 44px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: nunito;
+    color: black;
+    height: 24px;
+    width: 160px;
+
+}
+
 .forget-password{
     cursor: pointer;
     color: #433895;
