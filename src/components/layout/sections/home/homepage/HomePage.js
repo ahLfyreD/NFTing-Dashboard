@@ -7,7 +7,7 @@ import About from "./content/About";
 
 const HomePage = () => {
   return (
-    <div className="h-100 p-4 position-relative">
+    <div className="w-100 p-4">
       <div>
         <TopHome />
       </div>
@@ -16,7 +16,7 @@ const HomePage = () => {
         <HomeTrend />
       </div> */}
 
-      <div>
+       <div>
         <HomeDrops />
       </div>
 

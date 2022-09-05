@@ -17,5 +17,12 @@
     "login_with_twitter": "Se connecter avec Twitter",
     "signup_with_google": "S'inscrire avec Google",
     "signup_with_facebook": "S'inscrire avec Facebook",
-    "signup_with_twitter": "S'inscrire avec Twitter"
+    "signup_with_twitter": "S'inscrire avec Twitter",
+    "and": "et",
+    "rules": "En continuant, vous acceptez les",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "cookies_use": "Utilisation de cookies",
+    "of_NFTing": "de NFTing"
+    
 }

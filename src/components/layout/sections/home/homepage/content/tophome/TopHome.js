@@ -10,12 +10,12 @@ const TopHome = () => {
 
     <div className="top-container"
       style={{
-        height: 'fit-content', backgroundImage: `url(${image1})`,
+        height: '450px', backgroundImage: `url(${image1})`,
         width: '100%', backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
       }}>
       <div className="carousel-container">
-        <h1 className="text text-white mb-4">The up-and-coming NFT marketplace</h1>
+        <h1 className="text text-white mb-4">The up-and-coming NFT <br/> marketplace</h1>
         <p className="text-content text-white">Buy, sell and discover rare digital items</p>
 
         <div className="d-flex justify-content-between" style={{ height: 'fit-content', width: 350, }}>

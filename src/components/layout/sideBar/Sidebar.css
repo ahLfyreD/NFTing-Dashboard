@@ -5,6 +5,7 @@
     top: 0;
     transition: all 0.7s;
     border-right: 1px solid black;
+    z-index: 10;
 }
 
 .sidebar .sidebar-header{
@@ -14,8 +15,10 @@
 
 .sidebar .sidebar-header .arrow{
     position: absolute;
-    top: 40px;
-    right: 15px;
+    top: 30px;
+    font-size: 20px;
+    color: #1e3a8a;
+    background: white;
     cursor: pointer;
 }
 .sidebar .sidebar-header img{
@@ -59,6 +62,10 @@
     margin-right: 22px;
     min-width: 33px;
     width: 33px;
+}
+
+.sidebar-image{
+    z-index: -2;
 }
 
 

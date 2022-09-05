@@ -1,7 +1,7 @@
 
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Suspense } from "react"
+// import { Suspense } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import * as GiIcons from "react-icons/gi";
 
@@ -11,7 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import MyNFT from "@components/layout/sections/my-nft/MyNFT";
 import NewsFeed from "@components/layout/sections/news-feed/NewsFeed";
 import Explore from "@components/layout/sections/explore/Explore";
-import MarketStat from "@components/layout/sections/market-stat/MarketStat";
+import Terms from "@components/layout/sections/terms/Terms";
+import Privacy from "@components/layout/sections/terms/Privacy";
 import Footer from '@components/layout/footer/Footer'
 import HomePage from "@components/layout/sections/home/homepage/HomePage";
 import SideBar from "@components/layout/sidebar/SideBar";
@@ -23,7 +24,6 @@ import SignUpModal from "@components/modalContainer/SignUpModal";
 import { useState } from "react";
 
 function App() {
-  const [bar, setBar] = useState(true);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const LoginhandleOnClose = () => setShowLoginModal(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -31,20 +31,23 @@ function App() {
   const [showResetModal, setShowResetModal] = useState(false);
   const ResethandleOnClose = () => setShowResetModal(false);
 
+
+
   return (
     // <Suspense>
     <Router>
       <>
-        <div className="h-100">
+        <div className="h-100 w-100">
           <div className="app-container">
             <div className="d-flex">
-              <div>
+              <div className="">
                 <SideBar />
               </div>
               <div
-                className="p-0 container-fluid" style={{}}
+                className="p-0 container-fluid"
               >
-                <div className="sticky-top">
+                <div className="sticky-top"
+                style={{zIndex: 2,}}>
                   <Header
                     loginClick={() => setShowLoginModal(true)}
                     signUpClick={() => setShowSignUpModal(true)} />
@@ -52,9 +55,10 @@ function App() {
 
                 <div className="app-content">
                   <Routes>
-                     <Route path="/explore" element={<Explore />} />
-                  {/*<Route path="/marketstatistics" element={<MarketStat />} />
-                  <Route path="/newsfeed" element={<NewsFeed />} /> */}
+                    <Route path="/explore" element={<Explore />} />
+                    <Route path="/terms-of-services" element={<Terms />} />
+                    <Route path="/privacy" element={<Privacy />} />
+                    <Route path="/newsfeed" element={<NewsFeed />} />
                     <Route path="/" element={<HomePage />} />
                   </Routes>
                 </div>
@@ -89,6 +93,9 @@ function App() {
             login={() => {
               setShowSignUpModal(false);
               setShowLoginModal(true)
+            }}
+            onClose={() => {
+              setShowSignUpModal(false)
             }}
           />
         </div>

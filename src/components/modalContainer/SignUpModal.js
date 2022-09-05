@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from 'react-router-dom'
 // import Button from "@components/toggleBtn/Button";
 import * as FcIcons from "react-icons/fc";
 import * as BsIcons from "react-icons/bs";
@@ -88,8 +89,9 @@ const SignUpModal = ({ visible, onClose, login, modal, args, toggle }) => {
     <div>
       <Modal isOpen={modal} toggle={toggle} {...args} contentClassName="p-4">
         <ModalHeader className="border-0" toggle={toggle}>
-        <h1 className="head-title" style={{marginTop: 30,}}>{t('signup_to_nfting')}</h1></ModalHeader>
+        </ModalHeader>
         <ModalBody>
+          <h1 className="head-title" style={{ marginBottom: 30, }}>{t('signup_to_nfting')}</h1>
           <Form>
 
             <FormGroup>
@@ -161,18 +163,19 @@ const SignUpModal = ({ visible, onClose, login, modal, args, toggle }) => {
             </div> */}
             <div className="option-link">
               <h2>
-                By continuing, you agree to NFTing's{" "}
-                <a href="" className="forget-password">
-                  Terms of Service
-                </a>
+                {t('rules')}{" "}
+                <Link to="/terms-of-services" onClick={onClose} className="forget-password">
+                  {t('terms')}
+                </Link>
                 ,{" "}
+                <Link to="/privacy" onClick={onClose} className="forget-password">
+                 {t('privacy')}
+                </Link>{" "}
+                {t('and')}{" "}
                 <a href="" className="forget-password">
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a href="" className="forget-password">
-                  Cookies Use
+                  {t('cookies_use')} {" "}
                 </a>
+                {t('of_NFTing')}
                 .
               </h2>
             </div>
@@ -182,7 +185,7 @@ const SignUpModal = ({ visible, onClose, login, modal, args, toggle }) => {
           </Form>
 
           <div className="option-link">
-            <h2>{t('already_have_an_account')} <span className="link">{t('login')}</span></h2>
+            <h2>{t('already_have_an_account')} <span className="link" onClick={login}>{t('login')}</span></h2>
           </div>
           <div
             className="divider"

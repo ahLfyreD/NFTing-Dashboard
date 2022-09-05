@@ -2,51 +2,42 @@ import { Link } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 import * as BiIcons from "react-icons/bi";
 import NewsCard from "./NewsCard";
+import NewsCreate from "./NewsCreate";
 
 const News = () => {
   return (
     <div>
-      <section className="">
-        <div className="h-[250px] w-full bg-blue-900 flex justify-center">
+      <div className="">
+        <div className="d-flex justify-content-center"
+          style={{ height: 250, width: '100%', background: '#1e3a8a', }}>
           <div>
-            <h1 className="text-center text-3xl font-nunito text-white font-black my-5">
+            <h1 className="text-center"
+              style={{ fontSize: 28, fontFamily: 'nunito', color: 'white', fontWeight: 800, margin: '30px 0px' }}>
               Newsfeed & Blogs
             </h1>
-            <div className="h-10 rounded-md items-center flex w-[500px] justify-between bg-white">
+            <div className="align-items-center d-flex justify-content-between"
+              style={{ height: 40, borderRadius: 6, width: 500, background: 'white' }}>
               <input
-                className="form-input rounded-md w-72 h-8 pl-2 flex-1 font-nunito border-none focus:outline-none"
+                className="form-input"
+                style={{ borderRadius: 6, width: 288, height: 32, paddingLeft: 8, fontFamily: 'nunito', flex: 1, }}
                 type="search"
                 placeholder="Search Newsfeed and Blogs"
               />
-              <div className="flex justify-center items-center rounded-r-md h-12 w-10">
-                <AiIcons.AiOutlineSearch className="cursor-pointer text-2xl hover:scale-105" />
+              <div className="newsfeed-search d-flex justify-content-center align-items-center">
+                <AiIcons.AiOutlineSearch className="newsfeed-search-icon cursor-pointer" />
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section>
-        <div className="w-full flex justify-between items-center h-16 my-5 px-3">
-          <div className="flex w-56 h-16 justify-between items-center">
-            <div className="flex h-12 bg-secondary rounded-xl px-2 text-xl font-light items-center">
-              <BiIcons.BiCategory/>
-              <h1>Category</h1>
-            </div>
-            <div className="flex h-12 bg-secondary rounded-xl px-2 text-xl font-light items-center justify-around">
-              <AiIcons.AiOutlineTags/>
-              <h1>Tags</h1>
-            </div>
-          </div>
-          <div className="flex h-12 bg-secondary rounded-xl px-2 text-xl font-light items-center justify-center">
-            <BiIcons.BiSortAlt2/>
-            <h1>Sort</h1>
-          </div>
+      </div>
+ 
+      <section className="p-3">
+        <div>
+          <NewsCard />
         </div>
-      </section>
-
-      <section>
-        <NewsCard />
+        <div>
+          <NewsCreate />
+        </div>
       </section>
     </div>
   );

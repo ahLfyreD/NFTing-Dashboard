@@ -8,9 +8,27 @@ import { HomeDropsData } from "./HomeDropsData.js";
 import { HomeOptData } from "./HomeOptData.js";
 
 const HomeDrops = () => {
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: {max: 4000, min: 3000},
+            items: 5
+        },
+        desktop: {
+            breakpoint: {max: 3000, min: 1024},
+            items:4
+        },
+        tablet: {
+            breakpoint: {max: 1024, min: 464},
+            item: 3
+        },
+        mobile: {
+            breakpoint: {max: 464, min: 0},
+        items: 1
+        }
+    };
 
     return (
-        <>
+        <div style={{width: '100%', position: 'relative',}}>
             <div className="section">
                 <div className="d-flex justify-content-between align-items-center"
                     style={{ width: '100%', height: 70, }}
@@ -22,7 +40,7 @@ const HomeDrops = () => {
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
-            <div className="multi-carousel">
+             {/* <div className="multi-carousel row">
 
                 <Carousel
                     additionalTransfrom={0}
@@ -43,32 +61,7 @@ const HomeDrops = () => {
                     renderArrowsWhenDisabled={false}
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
-                    responsive={{
-                        desktop: {
-                            breakpoint: {
-                                max: 1064,
-                                min: 1024
-                            },
-                            items: 3,
-                            partialVisibilityGutter: 30
-                        },
-                        mobile: {
-                            breakpoint: {
-                                max: 464,
-                                min: 0
-                            },
-                            items: 1,
-                            partialVisibilityGutter: 30
-                        },
-                        tablet: {
-                            breakpoint: {
-                                max: 1024,
-                                min: 464
-                            },
-                            items: 2,
-                            partialVisibilityGutter: 30
-                        }
-                    }}
+                    responsive={responsive}
                     rewind={false}
                     rewindWithAnimation={false}
                     rtl={false}
@@ -114,8 +107,9 @@ const HomeDrops = () => {
                     })}
 
                 </Carousel>
-            </div>
-            <div className="section">
+            </div> */}
+             {/* <div className="section row"
+             style={{width: '10%'}}>
                 <div className="categories">
                     <div className="categories-content">
                         {HomeOptData.map((item, index) => {
@@ -129,8 +123,8 @@ const HomeDrops = () => {
                         })}
                     </div>
                 </div>
-            </div>
-        </>
+            </div> */}
+        </div>
     );
 };
 

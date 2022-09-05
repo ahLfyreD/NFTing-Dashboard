@@ -70,11 +70,11 @@ const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp }) 
   // if (!visible) return null;
   return (
     <div>
-      <Modal isOpen={modal} toggle={toggle} {...args} contentClassName="p-4">
+      <Modal isOpen={modal} toggle={toggle} {...args} contentClassName="modal-body p-4">
         <ModalHeader className="border-0" toggle={toggle}>
-          <h1 className="head-title" style={{marginTop: 30,}}>{t('login_to_nfting')}</h1>
         </ModalHeader>
         <ModalBody>
+          <h1 className="head-title" style={{ marginBottom: 30, }}>{t('login_to_nfting')}</h1>
           <Form>
             <FormGroup>
               <Input

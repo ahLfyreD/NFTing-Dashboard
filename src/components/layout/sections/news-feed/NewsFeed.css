@@ -1,0 +1,23 @@
+.newsfeed-option-selector{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.newsfeed-option-box{
+    width: 250px;
+    height: 210px;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+.news-btn:focus{
+    background: #1e3a8a;
+    color: #fff;
+}
+.newsfeed-text{
+    font-family: nunito;
+    font-size: 18px;
+    font-weight: 400;
+}

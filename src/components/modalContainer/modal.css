@@ -1,4 +1,6 @@
-
+.modal-body{
+    width: 100%;
+}
 .icon-btn{
     color: black;
     background: none;
@@ -36,6 +38,7 @@
 .option-link h2{
     font-size: 15px;
     font-weight: 400;
+    font-family: nunito;
 }
 
 .option-link .link{

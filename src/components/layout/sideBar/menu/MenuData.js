@@ -23,10 +23,5 @@ export const MenuData = [
         icons: <BiIcons.BiNews/>,
         cName: 'nav-test'
     },
-    {
-        title: 'market_stats',
-        path: '/marketstatistics',
-        icons: <MdIcons.MdQueryStats/>,
-        cName: 'nav-test'
-    },
+    
 ]

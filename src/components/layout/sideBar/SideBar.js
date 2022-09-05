@@ -29,7 +29,7 @@ const SideBar = () => {
   return (
     <div
       className={`sidebar`}
-      style={open ? {width: 250} : {width: 70}}
+      style={open ? {width: 250} : {width: 80}}
 
     >
        <div className="sidebar-header sticky-top d-flex w-100  bg-white align-items-center">
@@ -49,6 +49,7 @@ const SideBar = () => {
 
         <BsIcons.BsArrowLeftCircle
           className="arrow"
+          style={!open ? {right: '-10px'} : {right: '10px'}}
           onClick={iconOnClick}
         
         />
@@ -77,8 +78,8 @@ const SideBar = () => {
             </li>
           ))}
         </ul>
-        <div className={`mx-4 mt-4 ${!open && "visually-hidden"}`}>
-          <img src={side} alt="" />
+        <div className={`position-relative mx-4 mt-4`}>
+          <img src={side} alt="" className={`w-100 h-100 ${!open && "d-none"}`} />
         </div>
       </div>
     </div>
