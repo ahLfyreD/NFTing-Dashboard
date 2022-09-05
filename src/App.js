@@ -15,7 +15,7 @@ import Terms from "@components/layout/sections/terms/Terms";
 import Privacy from "@components/layout/sections/terms/Privacy";
 import Footer from '@components/layout/footer/Footer'
 import HomePage from "@components/layout/sections/home/homepage/HomePage";
-import SideBar from "@components/layout/sidebar/SideBar";
+import SideBar from "@components/layout/side/SideBar";
 import Header from "@components/layout/head/Header";
 import LoginModal from "@components/modalContainer/LoginModal";
 import ResetModal from "@components/modalContainer/ResetModal";
