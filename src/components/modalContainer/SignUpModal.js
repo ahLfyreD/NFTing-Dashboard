@@ -10,7 +10,7 @@ import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGro
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const SignUpModal = ({ visible, onClose, login, modal, args, toggle }) => {
+const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
   const [state, setState] = useState(true);
 
   const { t } = useTranslation(["modal"])

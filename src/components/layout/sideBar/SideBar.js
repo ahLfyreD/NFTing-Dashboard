@@ -15,10 +15,10 @@ const SideBar = () => {
     setOpen(!open);
   }
   const { t } = useTranslation(["sidebar"])
-  const activeLink =
-  "active-link";
-  const normalLink =
-  "normal-link";
+  // const activeLink =
+  // "active-link";
+  // const normalLink =
+  // "normal-link";
 
   // const navLinkStyles = ({ isActive}) => {
   //   return {
