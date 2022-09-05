@@ -5,9 +5,9 @@ import i18next from 'i18next';
 
 import * as AiIcons from "react-icons/ai";
 import * as FcIcons from "react-icons/fc";
-import * as IoIcons from "react-icons/io";
-import UsaFlag2 from "@asset/images/UsaFlag2.png";
-import France from "@asset/images/France.png";
+// import * as IoIcons from "react-icons/io";
+// import UsaFlag2 from "@asset/images/UsaFlag2.png";
+// import France from "@asset/images/France.png";
 
 
 
@@ -16,7 +16,7 @@ import { useEffect } from "react";
 // import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 
 const Header = ({ loginClick, signUpClick }) => {
-  const { i18n, t } = useTranslation(["common"]);
+  const { t } = useTranslation(["common"]);
 
   useEffect(() => {
     if (localStorage.getItem("i18nextLng")?.length > 2) {
@@ -25,23 +25,23 @@ const Header = ({ loginClick, signUpClick }) => {
   })
 
 
-  const handleOnClose = (e) => {
-    if (e.target.id === "lang") setOpen(open)
-  }
+  // const handleOnClose = (e) => {
+  //   if (e.target.id === "lang") setOpen(open)
+  // }
 
   const [open, setOpen] = useState(true);
-  const [englishState, setEnglishState] = useState(true)
-  const [frenchState, setFrenchState] = useState(true)
-  const englishBtn = () => {
-    setEnglishState(!englishState)
-    setFrenchState(!frenchState)
-  }
-  const frenchBtn = () => {
-    setEnglishState(!englishState)
-    setFrenchState(!frenchState)
-  }
-  const activeLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-blue-500"
-  const normalLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-black"
+  // const [englishState, setEnglishState] = useState(true)
+  // const [frenchState, setFrenchState] = useState(true)
+  // const englishBtn = () => {
+  //   setEnglishState(!englishState)
+  //   setFrenchState(!frenchState)
+  // }
+  // const frenchBtn = () => {
+  //   setEnglishState(!englishState)
+  //   setFrenchState(!frenchState)
+  // }
+  // const activeLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-blue-500"
+  // const normalLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-black"
 
   const languages = [
     {

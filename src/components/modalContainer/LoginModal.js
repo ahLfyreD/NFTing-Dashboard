@@ -5,10 +5,10 @@ import * as BsIcons from "react-icons/bs";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { useTranslation } from "react-i18next";
-import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGroupText, Button, FormGroup } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, Form, Input, InputGroup, InputGroupText, FormGroup } from 'reactstrap'
 import { useState, useEffect } from "react";
 
-const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp }) => {
+const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
   const [state, setState] = useState(false);
 
   const { t } = useTranslation(["modal"])
@@ -29,12 +29,12 @@ const LoginModal = ({ modal, visible, onClose, toggle, args, onClick, SignUp }) 
     setIsSubmit(true);
   };
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formValues).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formValues).length === 0 && isSubmit) {
+  //     console.log(formValues);
+  //   }
+  // }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};

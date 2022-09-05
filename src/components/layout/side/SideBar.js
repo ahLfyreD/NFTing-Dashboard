@@ -35,11 +35,13 @@ const SideBar = () => {
        <div className="sidebar-header sticky-top d-flex w-100  bg-white align-items-center">
         <img
           src={icon}
+          alt='icon'
           className={`ml-4 cursor-pointer`}
         />
 
         <img
           src={NFTlogo}
+          alt='logo'
           className={` ${
             !open && "d-none"
           }`}

@@ -1,6 +1,6 @@
 
 import * as AiIcons from "react-icons/ai";
-import * as BiIcons from "react-icons/bi";
+// import * as BiIcons from "react-icons/bi";
 import NewsCard from "./NewsCard";
 import NewsCreate from "./NewsCreate";
 

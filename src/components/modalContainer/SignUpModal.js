@@ -39,12 +39,12 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
     // setIsSubmit(true);
   };
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formValues).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formValues).length === 0 && isSubmit) {
+  //     console.log(formValues);
+  //   }
+  // }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -172,9 +172,9 @@ const SignUpModal = ({  onClose, login, modal, args, toggle }) => {
                  {t('privacy')}
                 </Link>{" "}
                 {t('and')}{" "}
-                <a href="" className="forget-password">
+                <Link to="/" onClick={onClose} className="forget-password">
                   {t('cookies_use')} {" "}
-                </a>
+                </Link>
                 {t('of_NFTing')}
                 .
               </h2>

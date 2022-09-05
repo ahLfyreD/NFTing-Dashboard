@@ -5,7 +5,7 @@ import nft from '@asset/images/nft.png'
 import nftAll from '@asset/images/nftAll.jpeg'
 import nftIntro from '@asset/images/nftIntro.jpeg'
 import nftObject from '@asset/images/nftObject.png'
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap'
 
 const NewsCard = () => {
     return (

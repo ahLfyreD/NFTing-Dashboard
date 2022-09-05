@@ -1,11 +1,11 @@
-import { HomeNewsData } from "./HomeNewsData.js";
+// import { HomeNewsData } from "./HomeNewsData.js";
 // import { Card } from "@components/card/Card";
-import world from "@asset/images/image3.jpg";
+// import world from "@asset/images/image3.jpg";
 import nft from '../../../../../../asset/images/nft.png'
 import nftAll from '../../../../../../asset/images/nftAll.jpeg'
 import nftIntro from '../../../../../../asset/images/nftIntro.jpeg'
 import nftObject from '../../../../../../asset/images/nftObject.png'
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap'
 
 const HomeNews = () => {
     

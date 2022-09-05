@@ -3,7 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { DropsData } from "./DropsData.js";
 
-import * as AiIcons from "react-icons/ai"
+// import * as AiIcons from "react-icons/ai"
 
 const Drops = () => {
 //   const breakPoints = [

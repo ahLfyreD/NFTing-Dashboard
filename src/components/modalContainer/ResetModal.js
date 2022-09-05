@@ -1,13 +1,13 @@
 // import Button from "@components/toggleBtn/Button";
 import * as BiIcons from "react-icons/bi";
-import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
 import './modal.css'
-import { Modal, ModalHeader, ModalBody, Form, Label, Input, InputGroup, InputGroupText, Button, FormGroup } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, Form, Input, FormGroup } from 'reactstrap'
 
-const ResetModal = ({ visible, onClose, modal, toggle, args, login }) => {
-  const handleOnClose = (e) => {
-    if (e.target.id === "container") onClose();
-  };
+const ResetModal = ({ onClose, modal, toggle, args, login }) => {
+  // const handleOnClose = (e) => {
+  //   if (e.target.id === "container") onClose();
+  // };
 
   // if (!visible) return null;
 

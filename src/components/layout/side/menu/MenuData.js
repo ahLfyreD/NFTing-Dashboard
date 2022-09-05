@@ -1,7 +1,7 @@
 import * as AiIcons from "react-icons/ai"
 import * as TbIcons from "react-icons/tb"
 import * as BiIcons from "react-icons/bi"
-import * as MdIcons from "react-icons/md"
+// import * as MdIcons from "react-icons/md"
 
 
 export const MenuData = [
