@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import { Modal, ModalHeader, ModalBody, Form, Input, InputGroup, InputGroupText, FormGroup } from 'reactstrap'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
   const [state, setState] = useState(false);
@@ -17,6 +17,7 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const tempFormValuesFunc = useRef()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,11 +30,17 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
     setIsSubmit(true);
   };
 
-  useEffect(() => {
+  const formValuesFunc = () => {
     console.log(formErrors);
     if (Object.keys(formValues).length === 0 && isSubmit) {
       console.log(formValues);
     }
+  }
+
+  tempFormValuesFunc.current = formValuesFunc
+
+  useEffect(() => {
+    tempFormValuesFunc.current()
   }, [formErrors]);
 
   const validate = (values) => {

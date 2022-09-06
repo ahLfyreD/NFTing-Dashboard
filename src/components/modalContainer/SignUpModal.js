@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from 'react-router-dom'
 // import Button from "@components/toggleBtn/Button";
 import * as FcIcons from "react-icons/fc";
@@ -25,6 +25,7 @@ const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const tempFormValuesFunc = useRef()
   // const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (event) => {
@@ -38,11 +39,19 @@ const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
     setIsSubmit(true);
   };
 
-  useEffect(() => {
+  
+  
+  const formValuesFunc = () => {
     console.log(formErrors);
     if (Object.keys(formValues).length === 0 && isSubmit) {
       console.log(formValues);
     }
+  }
+
+  tempFormValuesFunc.current = formValuesFunc
+  
+  useEffect(() => {
+    tempFormValuesFunc.current()
   }, [formErrors]);
 
   const validate = (values) => {
