@@ -49,14 +49,14 @@ const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
   }
 
   tempFormValuesFunc.current = formValuesFunc
-  
+
   useEffect(() => {
     tempFormValuesFunc.current()
   }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
-    const regex = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
     if (!values.firstName) {
       errors.firstName = "*Required";
     }
@@ -66,7 +66,9 @@ const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
     if (!values.email) {
       errors.email = "Email is required";
     } else if (
-      regex.test(values.email)
+      /* eslint-disable */
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)
+      /* eslint-enable */
     ) {
       errors.email = "This is not a valid email format!";
     }

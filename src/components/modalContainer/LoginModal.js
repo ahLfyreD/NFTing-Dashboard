@@ -1,4 +1,5 @@
 // import Button from "@components/toggleBtn/Button";
+
 import "./modal.css"
 import * as FcIcons from "react-icons/fc";
 import * as BsIcons from "react-icons/bs";
@@ -45,12 +46,13 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!values.email) {
       errors.email = "Email is required";
     } else if (
-      regex.test(values.email)
+      /* eslint-disable */
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)
+      /* eslint-enable */
     ) {
       errors.email = "This is not a valid email format!";
     }
