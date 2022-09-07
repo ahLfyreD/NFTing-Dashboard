@@ -20,6 +20,7 @@
     color: #1e3a8a;
     background: white;
     cursor: pointer;
+    display: flex;
 }
 .sidebar .sidebar-header img{
     height: 40px;
