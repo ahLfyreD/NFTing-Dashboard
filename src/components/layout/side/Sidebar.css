@@ -28,7 +28,6 @@
 .sidebar .menu-data{
     position: relative;
     height: fit-content;
-    padding-right: 5px;
     transition: ease-out 0.8s;
 }
 
@@ -36,27 +35,61 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    width: 100%;
     margin-bottom: 0;
-    padding-left: 0;
+    padding: 0;
 }
 
 .sidebar .menu-data li{
     height: 40px;
+    width: 100%;
     position: relative;
 }
-.sidebar .menu-data .nav-link{
+.sidebar .menu-data .active-link{
     align-items: center;
     display: flex;
+    text-decoration: none;
+    border-right: 4px solid #433895;
+    color: #433895;
+    font-size: 18px;
+    font-weight: 700;
+    height: 35px;
+    width: 100%;
+    margin: 0.65rem 0;
+    padding: 0 0.7rem;
+}
+.sidebar .menu-data .active-link i{
+    background: #a3c7c9;
+}
+.sidebar .menu-data .active-link:hover{
+    color: #21268f; 
+}
+.sidebar .menu-data .normal-link{
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: black;
     font-size: 18px;
     font-weight: 500;
     height: 35px;
     margin: 0.65rem 0;
     padding: 0 0.7rem;
 }
-.sidebar .menu-data .nav-link .nav-icon{
+.sidebar .menu-data .normal-link:hover{
+    color: #21268f;
+     
+}
+.sidebar .menu-data .normal-link:hover span{
+    font-weight: 700;
+}
+.sidebar .menu-data .normal-link:hover i{
+    background: #a3c7c9;
+}
+.sidebar .menu-data .nav-icon{
     align-items: center;
     display: flex;
     height: 33px;
+    border-radius: 10px;
     justify-content: center;
     margin-left: 12px;
     margin-right: 22px;

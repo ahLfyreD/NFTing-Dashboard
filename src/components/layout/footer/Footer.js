@@ -16,7 +16,7 @@ const Footer = () => {
                             user recommendation, in-depth filters, added NFT utilities, data dashboard,
                             and multilingual support.
                         </h5>
-                        <div className='d-flex' style={{width: 350, height: 'fit-content',}}>
+                        <div className='d-flex' style={{ width: 350, height: 'fit-content', }}>
                             {FooterIconData.map((item, index) => {
                                 return (
                                     <span key={index} style={{ cursor: 'pointer', marginRight: 20, fontSize: 25, color: 'white' }}>
@@ -41,13 +41,14 @@ const Footer = () => {
                             <ul style={{ listStyle: 'none', padding: 0, marginTop: 30, }}>
                                 {FooterMarketplaceData.map((item, index) => {
                                     return (
-                                        <li key={index} className='footer-links' >
-                                            <h5 
-                                            style={{
-                                                fontSize: 12, fontFamily: 'nunito',
-                                                margin: '10px 0',
-                                                color: 'white', cursor: 'pointer',
-                                            }}>
+                                        <li key={index}>
+                                            <h5 className='footer-links'
+                                                style={{
+                                                    fontSize: 12, fontFamily: 'nunito',
+                                                    margin: '10px 0', width: 'fit-content',
+                                                    height: 'fit-content', color: 'white', cursor: 'pointer',
+
+                                                }}>
                                                 {item.name}
                                             </h5>
                                         </li>
@@ -70,12 +71,14 @@ const Footer = () => {
                             <ul style={{ listStyle: 'none', padding: 0, marginTop: 30, }}>
                                 {FooterResourceData.map((item, index) => {
                                     return (
-                                        <li key={index} className='footer-links'>
-                                            <h5 style={{
-                                                fontSize: 12, fontFamily: 'nunito',
-                                                margin: '10px 0',
-                                                color: 'white', cursor: 'pointer',
-                                            }}>
+                                        <li key={index}>
+                                            <h5 className='footer-links'
+                                                style={{
+                                                    fontSize: 12, fontFamily: 'nunito',
+                                                    margin: '10px 0', width: 'fit-content',
+                                                    height: 'fit-content', color: 'white', cursor: 'pointer',
+
+                                                }}>
                                                 {item.name}
                                             </h5>
                                         </li>
@@ -97,12 +100,14 @@ const Footer = () => {
                             <ul style={{ listStyle: 'none', padding: 0, marginTop: 30, }}>
                                 {FooterCompanyData.map((item, index) => {
                                     return (
-                                        <li key={index} className='footer-links'>
-                                            <h5 style={{
-                                                fontSize: 12, fontFamily: 'nunito',
-                                                margin: '10px 0',
-                                                color: 'white' , cursor: 'pointer',
-                                            }}>
+                                        <li key={index} >
+                                            <h5 className='footer-links'
+                                                style={{
+                                                    fontSize: 12, fontFamily: 'nunito',
+                                                    margin: '10px 0', width: 'fit-content',
+                                                    height: 'fit-content', color: 'white', cursor: 'pointer',
+
+                                                }}>
                                                 {item.name}
                                             </h5>
                                         </li>

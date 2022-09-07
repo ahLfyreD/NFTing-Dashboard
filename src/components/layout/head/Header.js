@@ -87,7 +87,7 @@ const Header = ({ loginClick, signUpClick }) => {
             <div className="icon-container navbar-nav d-flex justify-content-around ms-auto">
               <div>
                 <div className="dropdown">
-                  <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <FcIcons.FcGlobe className="language-icon"/>
                   </button>
                   <ul className="language-box dropdown-menu" aria-labelledby="dropdownMenuButton1">

@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as BsIcons from "react-icons/bs";
 import { MenuData } from "./menu/MenuData";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import icon from "../../../asset/images/icon.svg";
 import side from "../../../asset/images/side.png";
 import { useState } from "react";
@@ -15,10 +15,8 @@ const SideBar = () => {
     setOpen(!open);
   }
   const { t } = useTranslation(["sidebar"])
-  // const activeLink =
-  // "active-link";
-  // const normalLink =
-  // "normal-link";
+  const activeLink = "active-link";
+  const normalLink = "normal-link";
 
   // const navLinkStyles = ({ isActive}) => {
   //   return {
@@ -63,9 +61,10 @@ const SideBar = () => {
               key={index}
               className="nav-item d-block"
             >
-              <Link
+              <NavLink
                 to={item.path}
-                className="nav-link"
+                className={({ isActive }) => 
+                isActive ? activeLink : normalLink}
               >
                 <i className="nav-icon">{item.icons}</i>
                 <span
@@ -76,7 +75,7 @@ const SideBar = () => {
                 >
                   {t(item.title)}
                 </span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
