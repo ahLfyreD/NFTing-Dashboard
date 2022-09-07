@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
-  const [state, setState] = useState(true);
+  const [state, setState] = useState(false);
 
   const { t } = useTranslation(["modal"])
 

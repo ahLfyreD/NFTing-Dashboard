@@ -88,14 +88,14 @@ const Header = ({ loginClick, signUpClick }) => {
               <div>
                 <div className="dropdown">
                   <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <FcIcons.FcGlobe className="language-icon"/>
+                    <FcIcons.FcGlobe className="language-icon" />
                   </button>
                   <ul className="language-box dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <h1 className="lng-title">{t('select_your_language')}</h1>
+                    <h1 className="lng-title">{t('select_your_language')}</h1>
                     {languages.map(({ code, name, country_code }) => (
                       <li key={country_code}>
                         <button className="language-selector dropdown-item"
-                        onClick={() => i18next.changeLanguage(code)}>
+                          onClick={() => i18next.changeLanguage(code)}>
                           <span className={`flag-icon flag-icon-${country_code} mx-2`}></span>
                           {name}
                         </button>
@@ -110,6 +110,7 @@ const Header = ({ loginClick, signUpClick }) => {
                 onClick={loginClick}>{t('login')}</button>
 
               <button className="button"
+                style={{ background: '#433895', color: 'white' }}
                 onClick={signUpClick}>{t('sign_up')}</button>
 
             </div>
