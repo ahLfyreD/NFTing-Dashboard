@@ -1,11 +1,11 @@
 import * as AiIcons from "react-icons/ai"
-import * as TbIcons from "react-icons/tb"
+// import * as TbIcons from "react-icons/tb"
 import * as BiIcons from "react-icons/bi"
 import * as BsIcons from "react-icons/bs"
 import * as MdIcons from "react-icons/md"
 import * as CgIcons from "react-icons/cg"
 import * as HiIcons from "react-icons/hi"
-import { BsFillCaretDownSquareFill, BsMusicNoteList } from "react-icons/bs"
+// import { BsFillCaretDownSquareFill, BsMusicNoteList } from "react-icons/bs"
 
 
 export const HomeOptData = [
