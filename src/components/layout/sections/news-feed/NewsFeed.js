@@ -31,8 +31,8 @@ const News = () => {
         </div>
       </div>
  
-      <section className="p-3">
-        <div>
+      <section>
+        <div  className="p-4">
           <NewsCard />
         </div>
         <div>

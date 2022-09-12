@@ -8,7 +8,7 @@ import * as MdIcons from "react-icons/md"
 const NewsCreate = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center w-100"
-      style={{ height: 'fit-content', marginBottom: 30, }}>
+      style={{ height: 'fit-content', padding: 30, background: '#e3dee6' }}>
       <h1 className="head-title">
         Get NFTing Starter Pack
       </h1>

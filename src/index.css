@@ -127,6 +127,7 @@ body{
 
 .section{
     margin: 3rem 0;
+    width: 100%;
 }
 
 .card:hover{
@@ -137,15 +138,18 @@ body{
     position: relative;
     margin: 0 -0.5rem;
     max-width: 1024px;
+    display: flex;
+    
 }
 
 .categories {
     /* display: block; */
     margin-bottom: 4rem;
     /* margin-right: -27px; */
+    margin: 0 auto;
     overflow-x: auto;
     text-align: center;
-    width: 100%;
+    max-width: 1024px;
 }
 .categories::-webkit-scrollbar{
     height: 5px;

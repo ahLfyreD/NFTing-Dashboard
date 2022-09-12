@@ -47,15 +47,11 @@ const NewsCard = () => {
                                     </li>
                                 </ul>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
                 <div className="news-feed">
-                    <div className="row">
+                    <div className="row" style={{marginBottom: 30,}}>
                         <div className="col-md-3">
                             <Card className="card" style={{ height: 400, cursor: 'pointer' }}>
                                 <img

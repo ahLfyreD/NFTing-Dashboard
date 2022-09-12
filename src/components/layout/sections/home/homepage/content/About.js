@@ -11,7 +11,7 @@ import * as SiIcons from "react-icons/si"
 const About = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center w-100"
-      style={{ height: 'fit-content', }}>
+      style={{ height: 'fit-content', background: '#e3dee6', padding: 20, }}>
       <h1 className="head-title">
         Why Choose NFTing
       </h1>

@@ -148,7 +148,6 @@ const SignUpModal = ({ onClose, login, modal, args, toggle }) => {
                 <Input
                   type={state ? 'text' : 'password'}
                   name='password'
-                  onClick={toggleBtn}
                   className="border-end-0"
                   placeholder={t('password')}
                   value={formValues.password}

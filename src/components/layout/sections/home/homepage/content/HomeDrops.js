@@ -1,31 +1,27 @@
-// import Carousel from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 
 import "react-multi-carousel/lib/styles.css";
-// import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 // import load from "../../../../../../asset/images/image2.jpg";
 // // import { Card } from "@components/card/Card";
-// import { HomeDropsData } from "./HomeDropsData.js";
-// import { HomeOptData } from "./HomeOptData.js";
+import { HomeDropsData } from "./HomeDropsData.js";
+import { HomeOptData } from "./HomeOptData.js";
 
 const HomeDrops = () => {
-    // const responsive = {
-    //     superLargeDesktop: {
-    //         breakpoint: {max: 4000, min: 3000},
-    //         items: 5
-    //     },
-    //     desktop: {
-    //         breakpoint: {max: 3000, min: 1024},
-    //         items:4
-    //     },
-    //     tablet: {
-    //         breakpoint: {max: 1024, min: 464},
-    //         item: 3
-    //     },
-    //     mobile: {
-    //         breakpoint: {max: 464, min: 0},
-    //     items: 1
-    //     }
-    // };
+    const responsive = {
+        desktop: {
+            breakpoint: {max: 3000, min: 1024,},
+            items:4
+        },
+        tablet: {
+            breakpoint: {max: 1024, min: 464},
+            item: 3
+        },
+        mobile: {
+            breakpoint: {max: 464, min: 0},
+        items: 1
+        }
+    };
 
     return (
         <div style={{width: '100%', position: 'relative',}}>
@@ -40,7 +36,7 @@ const HomeDrops = () => {
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
-             {/* <div className="multi-carousel row">
+             <div className="multi-carousel">
 
                 <Carousel
                     additionalTransfrom={0}
@@ -48,7 +44,7 @@ const HomeDrops = () => {
                     autoPlay
                     autoPlaySpeed={3000}
                     centerMode={false}
-                    className=""
+                    className="p-5"
                     containerClass="container-with-dots"
                     dotListClass=""
                     draggable
@@ -76,7 +72,7 @@ const HomeDrops = () => {
                             <Card
                                 key={index}
                                 style={{
-                                    width: '18rem',
+                                    width: '15rem',
                                     padding: 20,
                                     
                                 }}
@@ -107,9 +103,8 @@ const HomeDrops = () => {
                     })}
 
                 </Carousel>
-            </div> */}
-             {/* <div className="section row"
-             style={{width: '10%'}}>
+            </div>
+             <div className="section">
                 <div className="categories">
                     <div className="categories-content">
                         {HomeOptData.map((item, index) => {
@@ -123,7 +118,7 @@ const HomeDrops = () => {
                         })}
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };

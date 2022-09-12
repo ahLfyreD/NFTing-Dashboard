@@ -59,6 +59,7 @@ const SideBar = () => {
             <li
               key={index}
               className="nav-item d-block"
+              style={{marginBottom: 10}}
             >
               <NavLink
                 to={item.path}

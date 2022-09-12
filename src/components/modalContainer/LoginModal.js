@@ -67,7 +67,8 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
     return errors;
   };
 
-  const toggleBtn = () => {
+  const toggleBtn = (e) => {
+
     setState((prevState) => !prevState);
   };
 
@@ -104,20 +105,22 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
                 <Input
                   type={state ? 'text' : 'password'}
                   name='password'
-                  onClick={toggleBtn}
                   className="border-end-0"
                   placeholder={t('password')}
                   value={formValues.password}
                   onChange={handleChange} />
                 <InputGroupText className="bg-transparent pe-3">
-                  <span className="icon-btn p-0 shadow-none"
-                    onClick={toggleBtn}>
-                    {state ? (
-                      <AiIcons.AiOutlineEye />
-                    ) : (
-                      <AiIcons.AiOutlineEyeInvisible />
-                    )}
-                  </span>
+                  <div>
+
+                    <span className="icon-btn p-0 shadow-none"
+                      onClick={toggleBtn}>
+                      {state ? (
+                        <AiIcons.AiOutlineEye />
+                      ) : (
+                        <AiIcons.AiOutlineEyeInvisible />
+                      )}
+                    </span>
+                  </div>
                 </InputGroupText>
               </InputGroup>
               <p className="text-danger">

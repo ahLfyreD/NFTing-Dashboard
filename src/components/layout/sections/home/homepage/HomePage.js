@@ -7,8 +7,8 @@ import About from "./content/About";
 
 const HomePage = () => {
   return (
-    <div className="w-100 p-4">
-      <div>
+    <div className="w-100">
+      <div className="p-4">
         <TopHome />
       </div>
 
@@ -16,7 +16,7 @@ const HomePage = () => {
         <HomeTrend />
       </div> */}
 
-       <div>
+       <div className="p-4">
         <HomeDrops />
       </div>
 
@@ -26,7 +26,7 @@ const HomePage = () => {
         <HomeCreate />
       </div>
 
-      <div>
+      <div className="p-4">
         <HomeNews />
       </div>
 
