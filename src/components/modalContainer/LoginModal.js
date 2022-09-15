@@ -67,7 +67,7 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
     return errors;
   };
 
-  const toggleBtn = (e) => {
+  const toggleBtn = () => {
 
     setState((prevState) => !prevState);
   };
@@ -185,6 +185,7 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
       </Modal>
     </div>
   );
+  return LoginModal
 };
 
 export default LoginModal;
