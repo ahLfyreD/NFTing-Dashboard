@@ -8,8 +8,8 @@
       "cover_image_url": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661955670-NFT%20Logo%203.png",
       "reading_time": 1,
       "created_at": "2022-08-31T14:21:10.518Z"
-  },
-  {
+    },
+    {
       "id": 2,
       "title": "Welcome to NFTing Store",
       "description": "A fresh and exciting project is about to launch that aims to solve the shortcomings of current NFT marketplaces — having to pay expensive…",
@@ -17,8 +17,8 @@
       "cover_image_url": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
       "reading_time": 1,
       "created_at": "2022-08-31T14:21:10.518Z"
-  },
-  {
+    },
+    {
       "id": 3,
       "title": "NFTing Start Prelisting for Artists and Projects",
       "description": " NFT artists and/or creators of all experience levels, sign up for our prelisting today without the added cost and risks!",
@@ -26,8 +26,8 @@
       "cover_image_url": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661955670-NFT%20Logo%203.png",
       "reading_time": 1,
       "created_at": "2022-08-31T14:21:10.518Z"
-  },
-  {
+    },
+    {
       "id": 4,
       "title": "More Than Just a Marketplace… An Entire Ecosystem",
       "description": " After handling several successful projects in the blockchain and NFT spaces, Kerel Verwaerde, the CEO & Founder, realized that the most…",
@@ -35,8 +35,50 @@
       "cover_image_url": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661955670-NFT%20Logo%203.png",
       "reading_time": 1,
       "created_at": "2022-08-31T14:21:10.518Z"
-  }
+    }
+  ],
+  "homeDropsData": [
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    },
+    {
+      "nft": "https://nfting-dev.s3.eu-central-1.amazonaws.com/admin/news/news-1661954553-ape.png",
+      "nftName": "NFTing Logo",
+      "collectorImage": "../../../../asset/images/picture.jpg",
+      "collectorName": "Annie Alfred"
+    }
   ]
-
-  
 }
