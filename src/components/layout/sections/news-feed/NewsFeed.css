@@ -12,6 +12,10 @@
     border-radius: 0 0 15px 15px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
+
+.news-btn{
+    background: #f2e6f8;
+}
 .news-btn:focus{
     background: #1e3a8a;
     color: #fff;

@@ -2,9 +2,10 @@ import "./Header.css";
 // import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
-
+import cookies from 'js-cookie'
 import * as AiIcons from "react-icons/ai";
 import * as FcIcons from "react-icons/fc";
+import * as TiIcons from "react-icons/ti";
 // import * as IoIcons from "react-icons/io";
 // import UsaFlag2 from "@asset/images/UsaFlag2.png";
 // import France from "@asset/images/France.png";
@@ -12,17 +13,18 @@ import * as FcIcons from "react-icons/fc";
 
 
 // import { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 
 const Header = ({ loginClick, signUpClick }) => {
   const { t } = useTranslation(["common"]);
+  const currentLanguageCode = cookies.get('i18next')
 
-  useEffect(() => {
-    if (localStorage.getItem("i18nextLng")?.length > 2) {
-      i18next.changeLanguage("en")
-    }
-  })
+  // useEffect(() => {
+  //   if (localStorage.getItem("i18nextLng")?.length > 2) {
+  //     i18next.changeLanguage("en")
+  //   }
+  // })
 
 
   // const handleOnClose = (e) => {
@@ -95,9 +97,17 @@ const Header = ({ loginClick, signUpClick }) => {
                     {languages.map(({ code, name, country_code }) => (
                       <li key={country_code}>
                         <button className="language-selector dropdown-item"
-                          onClick={() => i18next.changeLanguage(code)}>
-                          <span className={`flag-icon flag-icon-${country_code} mx-2`}></span>
-                          {name}
+                          onClick={() => i18next.changeLanguage(code)}
+                          style={{ background: code === currentLanguageCode ? '#a3c7c9' : null }}>
+                          <div className="d-flex">
+                            <span className={`fi fi-${country_code} mx-2`}></span>
+                            <div style={{ color: code === currentLanguageCode ? '#433895' : null, fontWeight: 600, }}>
+                              {name}
+                            </div>
+                          </div>
+                          <TiIcons.TiTick style={{opacity: code === currentLanguageCode ? 1 : 0,
+                                                  color: '#433895', fontSize: 20}}/>
+
                         </button>
                       </li>
 

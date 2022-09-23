@@ -184,8 +184,7 @@ const LoginModal = ({ modal, toggle, args, onClick, SignUp }) => {
         </ModalBody>
       </Modal>
     </div>
-  );
-  return LoginModal
+  ); 
 };
 
 export default LoginModal;

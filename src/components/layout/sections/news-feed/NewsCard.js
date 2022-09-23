@@ -8,6 +8,8 @@ import nftObject from '@asset/images/nftObject.png'
 import { Card, CardBody, CardTitle, CardText } from 'reactstrap'
 
 const NewsCard = () => {
+
+    
     return (
         <>
             <div style={{ marginBottom: 40, }}>
@@ -16,7 +18,7 @@ const NewsCard = () => {
                         style={{ height: 64, padding: '12px 0px', position: 'relative', }}>
                         <div className="col"></div>
                         <div className="col-auto col"
-                            style={{ borderRadius: 5, fontSize: 23, margin: '10px 10px', color: 'black', background: '#fdf9ff', }}>
+                            style={{ borderRadius: 5, fontSize: 23, margin: '10px 10px', color: 'black',  }}>
                             <div className="dropdown">
                                 <button className="news-btn btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <BiIcons.BiSortAlt2 style={{marginRight: 4, fontSize: 25, marginBottom: 4,}} />

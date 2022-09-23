@@ -12,6 +12,7 @@ module.exports = {
         aliases: {
           "@components": "./src/components/",
           "@asset": "./src/asset/",
+          "@redux": "./src/redux/",
         //   "@dir": "./src/some/dir",
           // you can alias packages too
         //   "@material-ui": "./node_modules/@material-ui-ie10"
