@@ -1,19 +1,17 @@
 import Carousel from "react-multi-carousel";
 import axios from 'axios';
-
+import { Link } from 'react-router-dom'
 import "react-multi-carousel/lib/styles.css";
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { setNfts } from "../../../../../../redux/actions/nftActions";
-// import load from "../../../../../../asset/images/image2.jpg";
-// // import { Card } from "@components/card/Card";
-import {  useEffect, useRef } from 'react'
-// import { HomeDropsData } from "./HomeDropsData.js";
+import { useEffect, useRef } from 'react'
 import { HomeOptData } from "./HomeOptData.js";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeDrops = () => {
 
-    // const [homeDropsData, setHomeDropsData] = useState([])
+    // code for using json server to fetch local APIs
+   // const [homeDropsData, setHomeDropsData] = useState([])
 
     // const [stretch, setStretch] = useState()
 
@@ -26,12 +24,19 @@ const HomeDrops = () => {
 
     //     getHomeDropsData()
     // }, []);
+
+    // const fetchHomeDropsData = async () => {
+    //     const res = await fetch('http://localhost:5000/homeDropsData')
+    //     const data = await res.json()
+
+    //     return data
+    // }
     const tempFetchNftsFunc = useRef()
     const nfts = useSelector((state) => state.allNfts.nfts);
     const dispatch = useDispatch();
     const fetchNfts = async () => {
         const response = await axios.get("https://api-dev.nfting.store/api/nft-items/").catch((err) => {
-            console.log("Err", err);
+            console.log("Err ", err);
         });
         dispatch(setNfts(response.data.items));
 
@@ -48,18 +53,9 @@ const HomeDrops = () => {
     }, []);
     console.log("nfts: ", nfts)
 
-
-    // const { id, title, media_url, } = nftList;
     console.log(nfts);
 
 
-
-    // const fetchHomeDropsData = async () => {
-    //     const res = await fetch('http://localhost:5000/homeDropsData')
-    //     const data = await res.json()
-
-    //     return data
-    // }
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024, },
@@ -89,7 +85,6 @@ const HomeDrops = () => {
                 <hr style={{ height: '1px', }} />
             </div>
             <div className="multi-carousel">
-
                 <Carousel
                     additionalTransfrom={0}
                     arrows
@@ -110,55 +105,55 @@ const HomeDrops = () => {
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
                     responsive={responsive}
-
                     shouldResetAutoplay
                     showDots={false}
                     sliderClass=""
                     slidesToSlide={2}
                     swipeable
                 >
-
-                    {nfts.map(( id, title, preview_image_url) => {
+                    {nfts.map((data, index) => {
                         return (
-                            <Card className="nft-card"
-                                key={id}
+                            
+                                <Card className="nft-card"
+                                    key={index}
 
-                            >
-                                <img
-                                    alt={title}
-                                    src={preview_image_url}
-                                    style={{
-                                        width: '100%',
-                                        height: 200,
-                                        textAlign: 'center'
-                                    }}
-                                />
-                                <CardBody className="p-0 mt-2">
-                                    <CardTitle tag="h5">
-                                        {title}
-                                    </CardTitle>
-                                    <CardSubtitle
-                                        className="mb-2"
-                                        tag="h6"
-                                    >
-                                        <div className="d-flex align-items-center"
-                                            style={{ height: 50, width: '100%', }}>
-                                            <div style={{ marginRight: '16px', }}>
-                                                {/* <img src={item.nft} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} /> */}
+                                >
+                                    <img
+                                        alt='title'
+                                        src={data.preview_image_url}
+                                        style={{
+                                            width: '100%',
+                                            height: 200,
+                                            textAlign: 'center',
+                                            borderRadius: '20px'
+                                        }}
+                                    />
+                                    <CardBody className="p-0 mt-2">
+                                        <CardTitle tag="h5">
+                                            <Link to={`/nft/${data.id}`}>
+                                                {data.title}
+                                            </Link>
+                                        </CardTitle>
+                                        <CardSubtitle
+                                            className="mb-2"
+                                            tag="h6"
+                                        >
+                                            <div className="d-flex align-items-center"
+                                                style={{ height: 50, width: '100%', }}>
+                                                <div style={{ marginRight: '16px', }}>
+                                                    {/* <img src={item.nft} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} /> */}
+                                                </div>
+                                                <div className="">
+                                                    {/* <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{item.collectorName}</p> */}
+                                                </div>
                                             </div>
-                                            <div className="">
-                                                {/* <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{item.collectorName}</p> */}
-                                            </div>
-                                        </div>
 
-                                    </CardSubtitle>
-
-
-                                </CardBody>
-                            </Card>
+                                        </CardSubtitle>
+                                    </CardBody>
+                                </Card>
+                            
                         )
                     })}
-
                 </Carousel>
             </div>
             <div className="section">

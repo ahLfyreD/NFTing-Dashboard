@@ -13,6 +13,14 @@
     border: none;
     flex: 1;
     outline: none;
+    font-family: nunito;
+}
+.search-icon{
+    cursor: pointer;
+}
+
+.search-icon:hover{
+    transform: scale(1.07);
 }
 
 .btn{

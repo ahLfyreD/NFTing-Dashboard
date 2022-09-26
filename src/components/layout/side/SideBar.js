@@ -9,8 +9,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import NFTlogo from "@asset/images/NFTingHeader.png";
 
+
+
+
 const SideBar = () => {
   const [open, setOpen] = useState(true);
+
   const iconOnClick = () => {
     setOpen(!open);
   }

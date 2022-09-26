@@ -1,4 +1,4 @@
-import { ActionTypes } from "../constants/action-types"
+import { ActionTypes } from "../constants/action-types";
 
 export const setNfts = (nfts) => {
     return {
@@ -14,9 +14,3 @@ export const selectedNfts = (nft) => {
     };
 };
 
-export const setNewsBlogs = (blogs) => {
-    return {
-        type: ActionTypes.SET_NEWS_BLOGS,
-        payload: blogs, 
-    };
-};

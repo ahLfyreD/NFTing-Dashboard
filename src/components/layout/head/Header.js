@@ -65,12 +65,12 @@ const Header = ({ loginClick, signUpClick }) => {
 
           <div className="d-flex p-1 rounded rounded-3  border border-2">
             <input
-              className="form-input pl-1 bg-transparent font-nunito "
+              className="form-input pl-1 bg-transparent "
               type="search"
               placeholder={t('search')}
             />
-            <div className="flex justify-center align-items-center rounded-r-md h-12 w-10">
-              <AiIcons.AiOutlineSearch className="cursor-pointer" />
+            <div className="d-flex justify-content-center align-items-center rounded-r-md h-12 w-10">
+              <AiIcons.AiOutlineSearch className="search-icon" />
             </div>
           </div>
 

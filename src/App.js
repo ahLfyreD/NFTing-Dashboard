@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Menu from '@components/home/menu/Menu'
 // import img2 from '@asset/images/picture.jpg'
 // import { Link } from 'react-router-dom'
-// import MyNFT from "@components/layout/sections/my-nft/MyNFT";
+import NftDetail from "@components/layout/sections/my-nft/NftDetail";
 import NewsFeed from "@components/layout/sections/news-feed/NewsFeed";
 import Explore from "@components/layout/sections/explore/Explore";
 import Terms from "@components/layout/sections/terms/Terms";
@@ -59,6 +59,7 @@ function App() {
                     <Route path="/terms-of-services" element={<Terms />} />
                     <Route path="/privacy" element={<Privacy />} />
                     <Route path="/newsfeed" element={<NewsFeed />} />
+                    <Route path="/nft/:nftId" element={<NftDetail />} />
                     <Route path="/" element={<HomePage />} />
                   </Routes>
                 </div>

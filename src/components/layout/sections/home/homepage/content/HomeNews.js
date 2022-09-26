@@ -5,30 +5,56 @@
 // import nftAll from '../../../../../../asset/images/nftAll.jpeg'
 // import nftIntro from '../../../../../../asset/images/nftIntro.jpeg'
 // import nftObject from '../../../../../../asset/images/nftObject.png'
+import { Link } from 'react-router-dom';
 import icon from "@asset/images/icon.svg";
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap'
-import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { setNewsBlogs } from "../../../../../../redux/actions/newsActions";
+import { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 const HomeNews = () => {
     // https://api-dev.nfting.store/api/news
-    const [newsData, setNewsData] = useState([])
+    // const [newsData, setNewsData] = useState([])
+
+    // useEffect(() => {
+
+    //     const getNewsData = async () => {
+    //         const newsDataFromServer = await fetchNewsData()
+    //         setNewsData(newsDataFromServer)
+    //     }
+
+    //     getNewsData()
+    // }, []);
+
+    // const fetchNewsData = async () => {
+    //     const res = await fetch('http://localhost:5000/newsData')
+    //     const data = await res.json()
+
+    //     return data
+    // }
+
+    const tempFetchNewsFuncd = useRef()
+    const blogs = useSelector((state) => state.allNews.blogs);
+    const dispatch = useDispatch();
+    const fetchNewsd = async () => {
+        const response = await axios.get("https://api-dev.nfting.store/api/news?page=1&limit=10").catch((err) => {
+            console.log("Err", err);
+        });
+        dispatch(setNewsBlogs(response.data.items));
+
+    };
+
+    const fetchNewsFuncd = () => {
+        fetchNewsd();
+    }
+
+    tempFetchNewsFuncd.current = fetchNewsFuncd
 
     useEffect(() => {
-
-        const getNewsData = async () => {
-            const newsDataFromServer = await fetchNewsData()
-            setNewsData(newsDataFromServer)
-        }
-
-        getNewsData()
+        tempFetchNewsFuncd.current()
     }, []);
-
-    const fetchNewsData = async () => {
-        const res = await fetch('http://localhost:5000/newsData')
-        const data = await res.json()
-
-        return data
-    }
+    console.log("blogs: ", blogs)
 
 
 
@@ -41,29 +67,29 @@ const HomeNews = () => {
                     <h1 className="head-title">
                         Newsfeed & Blogs
                     </h1>
-                    <h2 className="head-option">View all</h2>
+                    <h2 className="head-option"><Link to={"./newsfeed"}>View all</Link></h2>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
             <div className="news-feed">
                 <div className="row">
-                    {newsData.map((items, index) => (
+                    {blogs.map((data, index) => (
                         <div className="col-md-3"
                             key={index}>
-                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 400, cursor: 'pointer' }}>
+                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 450, cursor: 'pointer' }}>
                                 <img
                                     className="news-img"
                                     alt=""
-                                    src={items.cover_image_url} />
+                                    src={data.cover_image_url} />
                                 <CardBody>
                                     <CardTitle
                                         className="news-text mb-3"
                                         tag="h5">
-                                        {items.title}
+                                        {data.title}
                                     </CardTitle>
 
                                     <CardText className="news-content">
-                                        {items.description}
+                                        {data.description}
                                     </CardText>
                                     <div className="d-flex position-absolute"
                                         style={{ height: 50, width: '100', bottom: 2, }}>
@@ -72,7 +98,7 @@ const HomeNews = () => {
                                         </div>
                                         <div className="">
                                             <span style={{ fontSize: 13, fontFamily: 'nunito', fontWeight: 500, }}>NFTing</span>
-                                            <p style={{ fontSize: 10, fontFamily: 'nunito' }}>{items.created_at} {items.reading_time} min read</p>
+                                            <p style={{ fontSize: 10, fontFamily: 'nunito' }}>{data.created_at} {data.reading_time} min read</p>
                                         </div>
                                     </div>
 
