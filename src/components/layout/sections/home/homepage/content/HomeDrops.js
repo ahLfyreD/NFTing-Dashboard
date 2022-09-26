@@ -139,12 +139,12 @@ const HomeDrops = () => {
                                             tag="h6"
                                         >
                                             <div className="d-flex align-items-center"
-                                                style={{ height: 50, width: '100%', }}>
+                                                style={{ height: 50, width: '100%', marginTop: 20, }}>
                                                 <div style={{ marginRight: '16px', }}>
-                                                    {/* <img src={item.nft} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} /> */}
+                                                    <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                                                 </div>
                                                 <div className="">
-                                                    {/* <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{item.collectorName}</p> */}
+                                                    <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p>
                                                 </div>
                                             </div>
 
