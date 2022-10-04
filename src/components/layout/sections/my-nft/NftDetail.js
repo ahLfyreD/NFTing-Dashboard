@@ -78,24 +78,24 @@ const NftDetail = () => {
                     <div className="g-lg-3 g-md-1 row">
                       <div className="nft-owner col-sm-6">
                         <p className='nft-owner-label mb-0'>OWNER</p>
-                        {/* eslint-enable */}
-                        <a className='nft-item-owner d-flex flex-row align-items-center'>
+                        
+                        <span className='nft-item-owner d-flex flex-row align-items-center'>
                           <div className='nft-owner-img rounded-circle'>
                             <img src={owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                           </div>
                           <span className='nft-item-owner-name'>{owner.display_name}</span>
-                        </a>
+                        </span>
                       </div>
                       <div className="col-sm-6">
                         <p className="nft-collection-label mb-0">COLLECTION</p>
-                        <a className='nft-item-collection d-flex flex-row align-items-center'>
+                        <span className='nft-item-collection d-flex flex-row align-items-center'>
                         
                           <div className='nft-collection-img rounded-circle'>
                             <img src={collection.logo_url} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
-                        </a>
-                        {/* eslint-disable */}
+                        </span>
+                        
                       </div>
                     </div>
                     <div className="mft-item-view-and-favourites row"></div>
