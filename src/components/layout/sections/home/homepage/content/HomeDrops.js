@@ -35,7 +35,9 @@ const HomeDrops = () => {
     const nfts = useSelector((state) => state.allNfts.nfts);
     const dispatch = useDispatch();
     const fetchNfts = async () => {
-        const response = await axios.get("https://api-dev.nfting.store/api/nft-items/").catch((err) => {
+        const response = await axios
+        .get("https://api-dev.nfting.store/api/nft-items/")
+        .catch((err) => {
             console.log("Err ", err);
         });
         dispatch(setNfts(response.data.items));

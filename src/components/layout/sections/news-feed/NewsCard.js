@@ -7,46 +7,55 @@ import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
+
 const NewsCard = () => {
-    const [option, setOption] = useState("Newest");
+    const [option, setOption] = useState('Newest');
 
-    // const fetchOption = (event) => {
-    //     if(event.target.value === "changeOption")
-        
 
-    // }
+
+
+
+
+
 
     const selectedOption = [
         {
             id: 1,
             name: 'Newest',
+            code: 'newest'
         },
         {
             id: 2,
             name: 'Oldest',
+            code: 'oldest'
         },
         {
             id: 3,
             name: 'Length: Short to Long',
+            code: 'short'
         },
         {
             id: 4,
             name: 'Length: Long to Short',
+            code: 'long'
         }
     ]
     const tempFetchNewsFunc = useRef()
     const blogs = useSelector((state) => state.allNews.blogs);
     const dispatch = useDispatch();
     const fetchNews = async () => {
-        const response = await axios.get("https://api-dev.nfting.store/api/news?page=1&limit=10").catch((err) => {
-            console.log("Err", err);
-        });
-        dispatch(setNewsBlogs(response.data.items));
+        const response = await axios
+            .get(`https://api-dev.nfting.store/api/news?page=1&limit=10&sort=newest`)
+            .catch((err) => {
+                console.log("Err", err);
+            });
 
+        dispatch(setNewsBlogs(response.data.items));
     };
 
+
     const fetchNewsFunc = () => {
-        fetchNews();
+        if (option && option !== "") fetchNews();
     }
 
     tempFetchNewsFunc.current = fetchNewsFunc
@@ -55,6 +64,14 @@ const NewsCard = () => {
         tempFetchNewsFunc.current()
     }, []);
     console.log("blogs: ", blogs)
+
+
+
+    // const sorted = blogs.sort((a, b) => {
+    //     const isReversed = (sortedType === 'asc') ? 1 : -1;
+    //     return isReversed * a.data.id.localeCompare(b.data.id);
+
+    // })
 
 
     return (
@@ -72,15 +89,16 @@ const NewsCard = () => {
                                     <span className="newsfeed-text">{option}</span>
                                 </button>
                                 <ul className="newsfeed-option-box dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    {selectedOption.map(( data, index ) => {
+                                    {selectedOption.map((data, index) => {
                                         return (
                                             <li key={index}>
                                                 <button className="newsfeed-option-selector dropdown-item"
-                                                onClick={() => setOption(true)}>
+                                                    onClick={() =>
+                                                        setOption(data.name)
+                                                    }>
                                                     <span className="newsfeed-text">{data.name}</span>
                                                 </button>
                                             </li>
-
                                         )
                                     })}
                                 </ul>

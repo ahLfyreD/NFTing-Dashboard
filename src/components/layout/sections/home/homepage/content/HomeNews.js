@@ -38,7 +38,7 @@ const HomeNews = () => {
     const blogs = useSelector((state) => state.allNews.blogs);
     const dispatch = useDispatch();
     const fetchNewsd = async () => {
-        const response = await axios.get("https://api-dev.nfting.store/api/news?page=1&limit=10").catch((err) => {
+        const response = await axios.get("https://api-dev.nfting.store/api/news?page=1&limit=4").catch((err) => {
             console.log("Err", err);
         });
         dispatch(setNewsBlogs(response.data.items));
