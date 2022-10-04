@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import axios from 'axios';
 import "./NftDetail.css"
-import * as IoIcons from "react-icons/io"
+// import * as IoIcons from "react-icons/io"
 import * as BsIcons from "react-icons/bs"
 import * as FiIcons from "react-icons/fi"
 import { selectedNfts } from "../../../../redux/actions/nftActions";
@@ -78,7 +78,8 @@ const NftDetail = () => {
                     <div className="g-lg-3 g-md-1 row">
                       <div className="nft-owner col-sm-6">
                         <p className='nft-owner-label mb-0'>OWNER</p>
-                        <a className='nft-item-owner d-flex flex-row align-items-center' href="">
+                        {/* eslint-enable */}
+                        <a className='nft-item-owner d-flex flex-row align-items-center'>
                           <div className='nft-owner-img rounded-circle'>
                             <img src={owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                           </div>
@@ -87,12 +88,14 @@ const NftDetail = () => {
                       </div>
                       <div className="col-sm-6">
                         <p className="nft-collection-label mb-0">COLLECTION</p>
-                        <a className='nft-item-collection d-flex flex-row align-items-center' href="">
+                        <a className='nft-item-collection d-flex flex-row align-items-center'>
+                        
                           <div className='nft-collection-img rounded-circle'>
                             <img src={collection.logo_url} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
                         </a>
+                        {/* eslint-disable */}
                       </div>
                     </div>
                     <div className="mft-item-view-and-favourites row"></div>
@@ -135,7 +138,7 @@ const NftDetail = () => {
                 </div>
               </div>
             </div> */}
-            /* eslint-disable */
+            {/* eslint-disable */}
             <ul className="nft-item-tabs nav nav-tabs mb-3" id="nav-tab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a className="nav-link active" id="nav-description-tab" data-bs-toggle="pill" data-bs-target="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">NFT Description</a>
@@ -147,7 +150,7 @@ const NftDetail = () => {
                 <a className="nav-link" id="nav-activity-tab" data-bs-toggle="pill" data-bs-target="#nav-activity" role="tab" aria-controls="nav-activity" aria-selected="false">Activity History</a>
               </li>
             </ul>
-            /* eslint-enaable */
+            {/* eslint-enable */}
             <div className="tab-content" id="nav-tabContent">
               <div className="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
                 <div className="row">
