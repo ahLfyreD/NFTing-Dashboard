@@ -56,7 +56,7 @@
 .nft-view .section .nft-item-owner .nft-item-owner-name,
 .nft-view .section .nft-item-collection .nft-item-collection-name {
     color: grey;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 28px;
@@ -73,6 +73,31 @@
     padding-bottom: 100%;
     position: relative;
     width: 100%;
+}
+
+.nft-price-container{
+    border-radius: 12px;
+}
+
+.nft-price-container .nft-price-header {
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.nft-card-btn-action{
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 15%);
+    font-size: 22px;
+    font-weight: 700;
+    height: 62px;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-align: center;
+    background: #433895;
+    color: #fff;
+    border: none;
 }
 
 .nft-item-tabs .nav-item .nav-link {
@@ -150,4 +175,14 @@
     letter-spacing: 0;
     line-height: 34px;
     font-family: nunito;
+}
+
+.section-title{
+    color: #433895;
+    font-family: nunito;
+    font-weight: 800;
+}
+
+.link-view-all:hover{
+    border-bottom: 1px solid black;
 }

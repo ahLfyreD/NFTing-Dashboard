@@ -4,20 +4,15 @@ import icon from "@asset/images/icon.svg";
 import * as BiIcons from "react-icons/bi";
 import { setNewsBlogs } from "../../../../redux/actions/newsActions";
 import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 
 const NewsCard = () => {
-    const [option, setOption] = useState('Newest');
+    const [option, setOption] = useState('newest');
 
-
-
-
-
-
-
-
+    
+    
     const selectedOption = [
         {
             id: 1,
@@ -40,38 +35,21 @@ const NewsCard = () => {
             code: 'long'
         }
     ]
-    const tempFetchNewsFunc = useRef()
+    
     const blogs = useSelector((state) => state.allNews.blogs);
     const dispatch = useDispatch();
-    const fetchNews = async () => {
-        const response = await axios
-            .get(`https://api-dev.nfting.store/api/news?page=1&limit=10&sort=newest`)
-            .catch((err) => {
-                console.log("Err", err);
-            });
 
-        dispatch(setNewsBlogs(response.data.items));
-    };
-
-
-    const fetchNewsFunc = () => {
-        if (option && option !== "") fetchNews();
-    }
-
-    tempFetchNewsFunc.current = fetchNewsFunc
-
+/* eslint-disable */
     useEffect(() => {
-        tempFetchNewsFunc.current()
-    }, []);
-    console.log("blogs: ", blogs)
+        axios.get(`https://api-dev.nfting.store/api/news?page=1&limit=10&sort=${option}`)
+        .then(res => {
+            dispatch(setNewsBlogs(res.data.items))
+        }).catch((err) => {
+            console.log("Err ", err);
+        });
 
-
-
-    // const sorted = blogs.sort((a, b) => {
-    //     const isReversed = (sortedType === 'asc') ? 1 : -1;
-    //     return isReversed * a.data.id.localeCompare(b.data.id);
-
-    // })
+    }, [dispatch, option])
+/* eslint-enable */
 
 
     return (
@@ -86,7 +64,7 @@ const NewsCard = () => {
                             <div className="dropdown">
                                 <button className="news-btn btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <BiIcons.BiSortAlt2 style={{ marginRight: 4, fontSize: 25, marginBottom: 4, }} />
-                                    <span className="newsfeed-text">{option}</span>
+                                    <span className="newsfeed-text">{selectedOption.find(element => element.code === option).name}</span>
                                 </button>
                                 <ul className="newsfeed-option-box dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     {selectedOption.map((data, index) => {
@@ -94,13 +72,13 @@ const NewsCard = () => {
                                             <li key={index}>
                                                 <button className="newsfeed-option-selector dropdown-item"
                                                     onClick={() =>
-                                                        setOption(data.name)
+                                                        setOption(data.code)                                                       
                                                     }>
                                                     <span className="newsfeed-text">{data.name}</span>
                                                 </button>
                                             </li>
                                         )
-                                    })}
+                                    })} 
                                 </ul>
                             </div>
                         </div>
@@ -110,8 +88,8 @@ const NewsCard = () => {
                     <div className="row">
                         {blogs.map((data, index) => {
                             return (
-                                <div className="col-md-3" style={{ marginBottom: 30, }}>
-                                    <Card className="card" style={{ height: 450, cursor: 'pointer' }} key={index}>
+                                <div className="col-md-3" style={{ marginBottom: 30, }} key={index}>
+                                    <Card className="card" style={{ height: 450, cursor: 'pointer' }} >
                                         <img
                                             className="news-img"
                                             alt='title'

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import "react-multi-carousel/lib/styles.css";
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { setNfts } from "../../../../../../redux/actions/nftActions";
-import { useEffect, useRef } from 'react'
+import { useEffect, } from 'react'
 import { HomeOptData } from "./HomeOptData.js";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeDrops = () => {
 
     // code for using json server to fetch local APIs
-   // const [homeDropsData, setHomeDropsData] = useState([])
+    // const [homeDropsData, setHomeDropsData] = useState([])
 
     // const [stretch, setStretch] = useState()
 
@@ -31,31 +31,24 @@ const HomeDrops = () => {
 
     //     return data
     // }
-    const tempFetchNftsFunc = useRef()
     const nfts = useSelector((state) => state.allNfts.nfts);
     const dispatch = useDispatch();
-    const fetchNfts = async () => {
-        const response = await axios
-        .get("https://api-dev.nfting.store/api/nft-items/")
-        .catch((err) => {
-            console.log("Err ", err);
-        });
-        dispatch(setNfts(response.data.items));
 
-    };
 
-    const fetchNftsFunc = () => {
-        fetchNfts();
-    }
-
-    tempFetchNftsFunc.current = fetchNftsFunc
-
+    /* eslint-disable */
     useEffect(() => {
-        tempFetchNftsFunc.current()
-    }, []);
-    console.log("nfts: ", nfts)
+        axios.get(`https://api-dev.nfting.store/api/nft-items/`)
+            .then(res => {
+                dispatch(setNfts(res.data.items))
+            }).catch((err) => {
+                console.log("Err ", err);
+            });
 
-    console.log(nfts);
+    }, [])
+    /* eslint-enable */
+    // console.log("nfts: ", nfts)
+
+    // console.log(nfts);
 
 
     const responsive = {
@@ -115,33 +108,35 @@ const HomeDrops = () => {
                 >
                     {nfts.map((data, index) => {
                         return (
-                            
-                                <Card className="nft-card"
-                                    key={index}
 
-                                >
-                                    <img
-                                        alt='title'
-                                        src={data.preview_image_url}
-                                        style={{
-                                            width: '100%',
-                                            height: 200,
-                                            textAlign: 'center',
-                                            borderRadius: '20px'
-                                        }}
-                                    />
-                                    <CardBody className="p-0 mt-2">
-                                        <CardTitle tag="h5">
-                                            <Link to={`/nft/${data.id}`}>
-                                                {data.title}
-                                            </Link>
-                                        </CardTitle>
-                                        <CardSubtitle
-                                            className="mb-2"
-                                            tag="h6"
-                                        >
+                            <Card className="nft-card"
+                                key={index}
+
+                            >
+                                <img
+                                    alt='title'
+                                    src={data.preview_image_url}
+                                    style={{
+                                        width: '100%',
+                                        height: 200,
+                                        textAlign: 'center',
+                                        borderRadius: '20px'
+                                    }}
+                                />
+                                <CardBody className="p-0 mt-2">
+                                    <CardTitle tag="h5">
+                                        <Link to={`/nft/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito', fontWeight: 800 }}>
+                                            {data.title}
+                                        </Link>
+                                    </CardTitle>
+                                    <CardSubtitle
+                                        className="mb-2"
+                                        tag="h6"
+                                    >
+                                        <Link to={`/profile/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
                                             <div className="d-flex align-items-center"
                                                 style={{ height: 50, width: '100%', marginTop: 20, }}>
+
                                                 <div style={{ marginRight: '16px', }}>
                                                     <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
                                                 </div>
@@ -149,11 +144,12 @@ const HomeDrops = () => {
                                                     <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p>
                                                 </div>
                                             </div>
+                                        </Link>
 
-                                        </CardSubtitle>
-                                    </CardBody>
-                                </Card>
-                            
+                                    </CardSubtitle>
+                                </CardBody>
+                            </Card>
+
                         )
                     })}
                 </Carousel>

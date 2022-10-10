@@ -67,7 +67,7 @@ const HomeNews = () => {
                     <h1 className="head-title">
                         Newsfeed & Blogs
                     </h1>
-                    <h2 className="head-option"><Link to={"./newsfeed"}>View all</Link></h2>
+                    <h2 className="head-option"><Link to={"/newsfeed"}>View all</Link></h2>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>

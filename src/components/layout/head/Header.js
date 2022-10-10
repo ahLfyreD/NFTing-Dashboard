@@ -4,48 +4,13 @@ import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
 import cookies from 'js-cookie'
 import * as AiIcons from "react-icons/ai";
-import * as FcIcons from "react-icons/fc";
 import * as TiIcons from "react-icons/ti";
-// import * as IoIcons from "react-icons/io";
-// import UsaFlag2 from "@asset/images/UsaFlag2.png";
-// import France from "@asset/images/France.png";
-
-
-
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 
 const Header = ({ loginClick, signUpClick }) => {
   const { t } = useTranslation(["common"]);
   const currentLanguageCode = cookies.get('i18next')
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("i18nextLng")?.length > 2) {
-  //     i18next.changeLanguage("en")
-  //   }
-  // })
-
-
-  // const handleOnClose = (e) => {
-  //   if (e.target.id === "lang") setOpen(open)
-  // }
-
-  // const [open, setOpen] = useState(true);
-  // const [englishState, setEnglishState] = useState(true)
-  // const [frenchState, setFrenchState] = useState(true)
-  // const englishBtn = () => {
-  //   setEnglishState(!englishState)
-  //   setFrenchState(!frenchState)
-  // }
-  // const frenchBtn = () => {
-  //   setEnglishState(!englishState)
-  //   setFrenchState(!frenchState)
-  // }
-  // const activeLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-blue-500"
-  // const normalLink = " flex w-full h-12 items-center cursor-pointer hover:bg-barn text-black"
-
-  const languages = [
+    const languages = [
     {
       code: 'en',
       name: 'English',
@@ -90,7 +55,9 @@ const Header = ({ loginClick, signUpClick }) => {
               <div>
                 <div className="dropdown">
                   <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <FcIcons.FcGlobe className="language-icon" />
+                    
+                    <span className={`fi fi-${languages.find(element => element.code === currentLanguageCode).country_code} mx-2`}
+                          style={{borderRadius: '50%', border: '1px solid black', height: 24, width: 24,}} ></span>
                   </button>
                   <ul className="language-box dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <h1 className="lng-title">{t('select_your_language')}</h1>

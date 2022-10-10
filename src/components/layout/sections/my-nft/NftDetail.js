@@ -1,21 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import "./NftDetail.css"
-// import * as IoIcons from "react-icons/io"
 import * as BsIcons from "react-icons/bs"
 import * as FiIcons from "react-icons/fi"
+import * as AiIcons from "react-icons/ai"
+import logo from "@asset/images/polygonlogo.png"
 import { selectedNfts } from "../../../../redux/actions/nftActions";
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 // import {Card, CardBody} from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux';
+import { Card, CardBody } from 'reactstrap';
 
 
 
 const NftDetail = () => {
-  const tempFetchNftDetailFunc = useRef();
+
   const nft = useSelector((state) => state.nft);
-  console.log(nft)
-  const { title, media_url, owner, collection, token_link, blockchain, token_id, contract_type, royalties } = nft
+  const { title, media_url, owner, id,
+    collection, token_link, blockchain,
+    token_id, contract_type, royalties,
+    favorites_count, sale } = nft
   const { nftId } = useParams();
   console.log(nftId)
   const dispatch = useDispatch();
@@ -31,15 +36,13 @@ const NftDetail = () => {
     dispatch(selectedNfts(response.data));
   };
 
-  const fetchNftDetailFunc = () => {
-    if (nftId && nftId !== "") fetchNftDetail();
-  }
-
-  tempFetchNftDetailFunc.current = fetchNftDetailFunc
-
+  /* eslint-disable */
   useEffect(() => {
-    tempFetchNftDetailFunc.current()
+    if (nftId && nftId !== "") fetchNftDetail();
   }, [nftId]);
+  /* eslint-enable */
+
+
   return (
 
     <div className='nft-view position-relative ' style={{ height: '100%', width: '100%' }}>
@@ -47,7 +50,7 @@ const NftDetail = () => {
         <div>...Loading</div>
       ) : (
         <div>
-          <div className='section' style={{ padding: '0 100px' }}>
+          <div className='section' style={{ padding: '0 100px', fontFamily: 'nunito' }}>
             <div className='g-lg-4 g-md-1 row' style={{ marginBottom: 20, }}>
               <div className="col-md-6 col-xxx-5" style={{ borderRadius: 10, }}>
                 <div className='nft-image-lg-container d-flex flex-column' style={{ border: '1px solid #e3dee6' }}>
@@ -77,67 +80,58 @@ const NftDetail = () => {
                     </div>
                     <div className="g-lg-3 g-md-1 row">
                       <div className="nft-owner col-sm-6">
-                        <p className='nft-owner-label mb-0'>OWNER</p>
-                        
-                        <span className='nft-item-owner d-flex flex-row align-items-center'>
+                        <p className='nft-owner-label mb-3'>OWNER</p>
+
+                        <Link to={`/profile/${id}`} className='nft-item-owner d-flex flex-row align-items-center'>
                           <div className='nft-owner-img rounded-circle'>
-                            <img src={owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
+                            <img src={owner.profile_picture} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
                           </div>
                           <span className='nft-item-owner-name'>{owner.display_name}</span>
-                        </span>
+                        </Link>
                       </div>
                       <div className="col-sm-6">
-                        <p className="nft-collection-label mb-0">COLLECTION</p>
+                        <p className="nft-collection-label mb-3">COLLECTION</p>
                         <span className='nft-item-collection d-flex flex-row align-items-center'>
-                        
+
                           <div className='nft-collection-img rounded-circle'>
-                            <img src={collection.logo_url} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
+                            <img src={collection.logo_url} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
                         </span>
-                        
+
                       </div>
                     </div>
-                    <div className="mft-item-view-and-favourites row"></div>
+                    <div className="row" style={{ padding: '5px 0px', marginTop: 7 }}>
+                      <div className="d-flex align-items-center col">
+                        <div className="d-flex align-items center">
+                          <AiIcons.AiOutlineEye style={{ width: 26, height: 26, marginRight: 9, }} />
+                          <p className='mb-0 label'>
+                            <span style={{ fontWeight: 800 }}>{favorites_count}</span>
+                            views
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <Card className="nft-price-container mx-3">
+                    <CardBody>
+                      <h5 className="nft-price-header">PRICE</h5>
+                      <div className="nft-item-price d-flex align-items-center" >
+                        <img src={logo} alt="" style={{ height: 26, width: 26, }} />
+                        <h2 className="price mb-0" style={{ fontWeight: 900, lineHeight: 2, marginLeft: 20, textAlign: 'right' }}>{sale.selling_price}</h2>
+                      </div>
+                      <button type='button' className="btn-multiple-state nft-card-btn-action d-block w-100 btn-shadow custom-button btn-sm">
+                        Buy Now
+                      </button>
+                    </CardBody>
+                  </Card>
+
 
                 </div>
               </div>
+
             </div>
-            {/* <Card className="card-bids">
-              <CardBody>
-                <ul className="nft-item-tabs nav nav-tabs">
-                  <li className='nav-item'>
-                    <a className="active nav-link">Bids</a>
-                  </li>
-                  <li className="nav-item ms-auto">
-                    <button className="btn" type="button" data-bs-toggle="collapse" data-bs-target="#toggler" aria-expanded="false" aria-controls="collapseExample">
-                      <IoIcons.IoIosArrowDown className='drop-icon' style={{ color: '#433895', fontWeight: 600, }} />
-                    </button>
-                  </li>
-                </ul>
-                <div id='toggler' className='collapse'>
-                  <div className="tab-content empty-data">
-                    <div className="tab-pane active">
-                      <p className="empty-data">No bids available yet.</p>
-                    </div>
-                  </div>
-                </div>
-              </CardBody>
-            </Card> */}
-            {/* <div style={{ border: '1px solid #e3dee6', borderRadius: 10, padding: 10, width: '100%' }}>
-              <div className='d-flex justify-content-between align-items-center'>
-                <h3 style={{ fontFamily: 'nunito', fontSize: 23, color: '#433895', fontWeight: 600}}>Offers</h3>
-                <button className="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  <IoIcons.IoIosArrowDown className='drop-icon' style={{color: '#433895', fontWeight: 600,}}/>
-                </button>
-              </div>
-              <div className="collapse" id="collapseExample">
-                <div className="card card-body border-t" style={{fontFamily: 'nunito', borderTop: '1px solid #e3dee6', borderRadius: '0px'}}>
-                  No offers available yet
-                </div>
-              </div>
-            </div> */}
             {/* eslint-disable */}
             <ul className="nft-item-tabs nav nav-tabs mb-3" id="nav-tab" role="tablist">
               <li className="nav-item" role="presentation">
@@ -210,7 +204,7 @@ const NftDetail = () => {
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="nav-metadata" role="tabpanel" aria-labelledby="nav-metadata-tab">
+              <div className="tab-pane fade" id="nav-metadata" role="tabpanel" aria-labelledby="nav-metadata-tab">
                 <div className="row">
                   <div className="col-sm-12">
                     <div className="nft-tab-pane">
@@ -222,10 +216,23 @@ const NftDetail = () => {
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="nav-activity" role="tabpanel" aria-labelledby="nav-activity-tab">...</div>
+              <div className="tab-pane fade" id="nav-activity" role="tabpanel" aria-labelledby="nav-activity-tab">...</div>
             </div>
           </div>
-          <div className='other-container'>
+          <div className='others-wrapper' style={{ backgroundColor: '#f6f6f6' }}>
+            <div className="other-container" style={{ width: "100%", height: "100%", padding: "1.2rem", margin: "0 auto" }}>
+              <div className="section">
+                <div className="d-flex align-items-baseline justify-content-between">
+                  <h2 className='section-title mb-0'>Others in collection</h2>
+                  <Link to={"/"} className='link-view-all' style={{ textDecoration: 'none', color: '#000', fontFamily: 'nunito', fontSize: 20 }}>View all</Link>
+                </div>
+                <hr style={{ height: '1px' }} />
+
+
+
+              </div>
+            </div>
+
 
           </div>
 
