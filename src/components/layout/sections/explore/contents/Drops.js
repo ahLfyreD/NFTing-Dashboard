@@ -155,9 +155,11 @@ const HomeDrops = () => {
                                                 <button className="btn btn-transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <BsIcons.BsThreeDots />
                                                 </button>
+                                                {/* eslint-disable */}
                                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a className="dropdown-item">Share</a></li>
                                                 </ul>
+                                                {/* eslint-enable */}
                                             </div>
                                             <div className="d-flex align-items-center">
                                                 <button type='button' className='btn-multiple-state btn-follow border-0 p-0 shadow-none btn btn-link'>
