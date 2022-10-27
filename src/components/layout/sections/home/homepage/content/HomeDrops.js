@@ -175,7 +175,7 @@ const HomeDrops = () => {
                                                     <BsIcons.BsThreeDots />
                                                 </button>
                                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a className="dropdown-item" href="#">Share</a></li>
+                                                    <li><a className="dropdown-item">Share</a></li>
                                                 </ul>
                                             </div>
                                             <div className="d-flex align-items-center">
