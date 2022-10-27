@@ -22,7 +22,10 @@ const collectionDetail = () => {
                         </div>
                         <div className="nft-action-buttons d-flex justify-content-end align-items-center">
                             <button type="button" className="primary-button btn-follow me-4 shadow-none btn btn-secondary">Add to Watchlist</button>
-                            <button type="button" className="btn-share-icon d-flex justify-content-center align-items0center me-4 btn btn-outline-primary">
+                            <button type="button"
+                                    className="btn-share-icon d-flex justify-content-center
+                                     align-items0center me-4 btn btn-outline-primary"
+                                    style={{border: "3px solid #433895"}}>
                                 <BiIcons.BiRefresh />
                             </button>
                         </div>

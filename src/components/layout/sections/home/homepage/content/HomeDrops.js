@@ -49,7 +49,7 @@ const HomeDrops = () => {
             });
 
     }, [])
-    /* eslint-enable */
+    /* eslint-disable */
     useEffect(() => {
         axios.get(`https://api-dev.nfting.store/api/nft-items/by-categories`)
             .then(res => {
@@ -147,18 +147,25 @@ const HomeDrops = () => {
                                         className="mb-2"
                                         tag="h6"
                                     >
-                                        <Link to={`/profile/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
+                                        <div style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
                                             <div className="d-flex align-items-center"
-                                                style={{ height: 50, width: '100%', marginTop: 20, }}>
+                                                style={{ height: 50, width: '125px', marginTop: 20, }}>
 
-                                                <div style={{ marginRight: '16px', }}>
-                                                    {/* <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} /> */}
-                                                </div>
-                                                <div className="">
-                                                    {/* <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p> */}
+                                                <div className='d-flex flex-row align-items-center'>
+                                                    <div className='rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%', background: '#def3fc' }}>
+
+                                                    </div>
+                                                    <a href={data.owner_url}
+                                                        className=''
+                                                        style={{
+                                                            textOverflow: "ellipsis",
+                                                            overflow: "hidden",
+                                                        }}>
+                                                            {/* {data.owner_address} */}
+                                                        </a>
                                                 </div>
                                             </div>
-                                        </Link>
+                                        </div>
                                         <div className="nft-item-price d-flex align-items-center" >
                                             <img src={logo} alt="" style={{ height: 16, width: 16, }} />
                                             <h5 className="price mb-0" style={{ fontWeight: 500, fontFamily: 'nunito', lineHeight: 2, marginLeft: 5, textAlign: 'right' }}>{data.sale.selling_price}</h5>
@@ -194,9 +201,9 @@ const HomeDrops = () => {
                             return (
                                 <div className="category" key={index}>
                                     {/* <Link to='/explore/:exploreId'> */}
-                                        <img className="category-icon" src={items.icon_url} alt="" />
-                                        {/* <i className="category-icon">{items.icon_url}</i> */}
-                                        <h6 className="category-name">{items.name}</h6>
+                                    <img className="category-icon" src={items.icon_url} alt="" />
+                                    {/* <i className="category-icon">{items.icon_url}</i> */}
+                                    <h6 className="category-name">{items.name}</h6>
                                     {/* </Link> */}
                                 </div>
                             )

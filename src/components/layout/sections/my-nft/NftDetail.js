@@ -17,7 +17,7 @@ import { Card, CardBody } from 'reactstrap';
 const NftDetail = () => {
 
   const nft = useSelector((state) => state.nft);
-  const { title, media_url, owner, id,
+  const { title, media_url, owner_address, owner_url, id,
     collection, token_link, blockchain,
     token_id, contract_type, royalties,
     favorites_count, sale } = nft
@@ -58,7 +58,7 @@ const NftDetail = () => {
                   <div className="d-flex justify-content-between nft-image-header">
                     <div className="d-flex align-items-center">
                       <div id="available">
-                        <a href={token_link}><img src={blockchain.icon_bw_url} alt="" /></a>
+                        <a href={collection.contract_address_url}><img src={logo} alt="" style={{ height: 18, width: 18, }} /></a>
                       </div>
                     </div>
                     <div className="d-flex align-items-center">
@@ -82,19 +82,19 @@ const NftDetail = () => {
                       <div className="nft-owner col-sm-6">
                         <p className='nft-owner-label mb-3'>OWNER</p>
 
-                        <Link to={`/profile/${owner.code}`} className='nft-item-owner d-flex flex-row align-items-center'>
-                          <div className='nft-owner-img rounded-circle'>
-                            <img src={owner.profile_picture} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
+                        <div className='nft-item-owner d-flex flex-row align-items-center'>
+                          <div className='nft-owner-img rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%' }}>
+                            
                           </div>
-                          <span className='nft-item-owner-name'>{owner.display_name}</span>
-                        </Link>
+                          <a href={owner_url} className='nft-item-owner-name'>{owner_address}</a>
+                        </div>
                       </div>
                       <div className="col-sm-6">
                         <p className="nft-collection-label mb-3">COLLECTION</p>
                         <Link to={`/collections/${collection.slug}`} className='nft-item-collection d-flex flex-row align-items-center'>
 
-                          <div className='nft-collection-img rounded-circle'>
-                            <img src={collection.logo_url} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
+                          <div className='nft-collection-img rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%' }}>
+                            
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
                         </Link>
@@ -196,7 +196,7 @@ const NftDetail = () => {
                             Royalties
                           </div>
                           <div className='details-content col'>
-                            {royalties}%
+                            {royalties} %
                           </div>
                         </div>
                       </div>

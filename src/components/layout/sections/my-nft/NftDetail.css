@@ -51,6 +51,13 @@
 .nft-view .section .nft-item-collection .nft-collection-img {
     background-size: cover;
     background-position: 50% center;
+    background: #def3fc;
+}
+
+.nft-view .section .nft-item-owner .nft-item-owner-name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 125px;
 }
 
 .nft-view .section .nft-item-owner .nft-item-owner-name,
@@ -63,6 +70,7 @@
     padding-left: 16px;
     text-align: left;
     text-decoration: none;
+    
 }
 
 .nft-view .section .nft-image-lg-container .nft-image-lg {
