@@ -17,8 +17,8 @@ import { Card, CardBody } from 'reactstrap';
 const NftDetail = () => {
 
   const nft = useSelector((state) => state.nft);
-  const { title, media_url, owner_address, owner_url, id,
-    collection, token_link, blockchain,
+  const { title, media_url, owner_address, owner_url,
+    collection, blockchain,
     token_id, contract_type, royalties,
     favorites_count, sale } = nft
   const { nftId } = useParams();

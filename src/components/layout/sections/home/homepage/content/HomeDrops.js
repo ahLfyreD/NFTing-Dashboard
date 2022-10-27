@@ -6,7 +6,6 @@ import logo from "@asset/images/polygonlogo.png"
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { setNfts, showCategories } from "../../../../../../redux/actions/nftActions";
 import { useEffect, } from 'react'
-import { HomeOptData } from "./HomeOptData.js";
 import * as BsIcons from 'react-icons/bs';
 import * as FiIcons from 'react-icons/fi';
 import { useDispatch, useSelector } from "react-redux";
