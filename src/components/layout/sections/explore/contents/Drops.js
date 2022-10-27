@@ -1,30 +1,57 @@
 import Carousel from "react-multi-carousel";
+import axios from 'axios';
+import { Link } from 'react-router-dom'
 import "react-multi-carousel/lib/styles.css";
+import logo from "@asset/images/polygonlogo.png"
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import { useState, useEffect } from "react";
-// import { DropsData } from "./DropsData.js";
+import { setNfts } from "../../../../../redux/actions/nftActions";
+import { useEffect, } from 'react'
+import * as BsIcons from 'react-icons/bs';
+import * as FiIcons from 'react-icons/fi'
+import { useDispatch, useSelector } from "react-redux";
 
-// import * as AiIcons from "react-icons/ai"
+const HomeDrops = () => {
 
-const Drops = () => {
-    const [homeDropsData, setHomeDropsData] = useState([])
+    // code for using json server to fetch local APIs
+    // const [homeDropsData, setHomeDropsData] = useState([])
 
+    // const [stretch, setStretch] = useState()
+
+    // useEffect(() => {
+
+    //     const getHomeDropsData = async () => {
+    //         const homeDropsDataFromServer = await fetchHomeDropsData()
+    //         setHomeDropsData(homeDropsDataFromServer)
+    //     }
+
+    //     getHomeDropsData()
+    // }, []);
+
+    // const fetchHomeDropsData = async () => {
+    //     const res = await fetch('http://localhost:5000/homeDropsData')
+    //     const data = await res.json()
+
+    //     return data
+    // }
+    const nfts = useSelector((state) => state.allNfts.nfts);
+    const dispatch = useDispatch();
+
+
+    /* eslint-disable */
     useEffect(() => {
+        axios.get(`https://api-dev.nfting.store/api/nft-items/`)
+            .then(res => {
+                dispatch(setNfts(res.data.items))
+            }).catch((err) => {
+                console.log("Err ", err);
+            });
 
-        const getHomeDropsData = async () => {
-            const homeDropsDataFromServer = await fetchHomeDropsData()
-            setHomeDropsData(homeDropsDataFromServer)
-        }
+    }, [])
+    /* eslint-enable */
+    // console.log("nfts: ", nfts)
 
-        getHomeDropsData()
-    }, []);
+    // console.log(nfts);
 
-    const fetchHomeDropsData = async () => {
-        const res = await fetch('http://localhost:5000/homeDropsData')
-        const data = await res.json()
-
-        return data
-    }
 
     const responsive = {
         desktop: {
@@ -41,8 +68,8 @@ const Drops = () => {
         }
     };
 
-  return (
-    <>
+    return (
+        <div style={{ width: '100%', position: 'relative', boxSizing: 'border-box' }}>
             <div className="section">
                 <div className="d-flex justify-content-between align-items-center"
                     style={{ width: '100%', height: 70, }}
@@ -55,7 +82,6 @@ const Drops = () => {
                 <hr style={{ height: '1px', }} />
             </div>
             <div className="multi-carousel">
-
                 <Carousel
                     additionalTransfrom={0}
                     arrows
@@ -76,65 +102,80 @@ const Drops = () => {
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
                     responsive={responsive}
-                    rewind={false}
-                    rewindWithAnimation={false}
-                    rtl={false}
                     shouldResetAutoplay
                     showDots={false}
                     sliderClass=""
                     slidesToSlide={2}
                     swipeable
                 >
-                    {homeDropsData.map((item, index) => {
+                    {nfts.map((data, index) => {
                         return (
-                            <Card
-                                key={index}
-                                style={{
-                                    width: '15rem',
-                                    padding: 20,
 
-                                }}
+                            <Card className="nft-card"
+                                key={index}
+
                             >
-                                <img
-                                    alt=''
-                                    src={item.nft}
-                                    style={{
-                                        width: '100%',
-                                        height: 200,
-                                        textAlign: 'center'
-                                    }}
-                                />
+                                <div className="nft-card-img position-relative">
+                                    <Link to={`/nft/${data.id}`} >
+                                        <div className="card-img-top" style={{ backgroundImage: `url(${data.preview_image_url})` }}>
+                                        </div>
+                                        <div className="overlay">
+                                            <button type="button" className="btn btn-secondary">Buy Now</button>
+                                        </div>
+                                    </Link>
+                                </div>
                                 <CardBody className="p-0 mt-2">
                                     <CardTitle tag="h5">
-                                        {item.nftName}
+                                        <Link to={`/nft/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito', fontWeight: 800 }}>
+                                            {data.title}
+                                        </Link>
                                     </CardTitle>
                                     <CardSubtitle
                                         className="mb-2"
                                         tag="h6"
                                     >
-                                        <div className="d-flex align-items-center"
-                                            style={{ height: 50, width: '100%', }}>
-                                            <div style={{ marginRight: '16px', }}>
-                                                <img src={item.nft} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
+                                        <Link to={`/profile/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
+                                            <div className="d-flex align-items-center"
+                                                style={{ height: 50, width: '100%', marginTop: 20, }}>
+
+                                                <div style={{ marginRight: '16px', }}>
+                                                    <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
+                                                </div>
+                                                <div className="">
+                                                    <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p>
+                                                </div>
                                             </div>
-                                            <div className="">                            
-                                                <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{item.collectorName}</p>
+                                        </Link>
+                                        <div className="nft-item-price d-flex align-items-center" >
+                                            <img src={logo} alt="" style={{ height: 16, width: 16, }} />
+                                            <h5 className="price mb-0" style={{ fontWeight: 500, fontFamily: 'nunito', lineHeight: 2, marginLeft: 5, textAlign: 'right' }}>{data.sale.selling_price}</h5>
+                                        </div>
+                                        <div className="nft-item-price d-flex justify-content-between align-items-center"style={{zIndex: 2, position: 'relative'}} >
+                                            <div className="dropdown" >
+                                                <button className="btn btn-transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <BsIcons.BsThreeDots />
+                                                </button>
+                                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a className="dropdown-item" href="#">Share</a></li>
+                                                </ul>
+                                            </div>
+                                            <div className="d-flex align-items-center">
+                                                <button type='button' className='btn-multiple-state btn-follow border-0 p-0 shadow-none btn btn-link'>
+                                                    <FiIcons.FiHeart />
+                                                </button>
                                             </div>
                                         </div>
-                                        
-                                    </CardSubtitle>
-                                   
 
+                                    </CardSubtitle>
                                 </CardBody>
                             </Card>
+
                         )
                     })}
-
                 </Carousel>
             </div>
-            
-        </>
-  );
+        </div>
+    );
 };
 
-export default Drops;
+export default HomeDrops;

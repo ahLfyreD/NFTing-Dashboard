@@ -47,7 +47,7 @@ const NftDetail = () => {
 
     <div className='nft-view position-relative ' style={{ height: '100%', width: '100%' }}>
       {Object.keys(nft).length === 0 ? (
-        <div>...Loading</div>
+        <div className='section-title'>...Loading</div>
       ) : (
         <div>
           <div className='section' style={{ padding: '0 100px', fontFamily: 'nunito' }}>
@@ -82,7 +82,7 @@ const NftDetail = () => {
                       <div className="nft-owner col-sm-6">
                         <p className='nft-owner-label mb-3'>OWNER</p>
 
-                        <Link to={`/profile/${id}`} className='nft-item-owner d-flex flex-row align-items-center'>
+                        <Link to={`/profile/${owner.code}`} className='nft-item-owner d-flex flex-row align-items-center'>
                           <div className='nft-owner-img rounded-circle'>
                             <img src={owner.profile_picture} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
                           </div>
@@ -91,13 +91,13 @@ const NftDetail = () => {
                       </div>
                       <div className="col-sm-6">
                         <p className="nft-collection-label mb-3">COLLECTION</p>
-                        <span className='nft-item-collection d-flex flex-row align-items-center'>
+                        <Link to={`/collections/${collection.slug}`} className='nft-item-collection d-flex flex-row align-items-center'>
 
                           <div className='nft-collection-img rounded-circle'>
                             <img src={collection.logo_url} alt="" style={{ height: 27, width: 27, borderRadius: '50%' }} />
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
-                        </span>
+                        </Link>
 
                       </div>
                     </div>

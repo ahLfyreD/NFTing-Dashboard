@@ -2,10 +2,13 @@ import Carousel from "react-multi-carousel";
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import "react-multi-carousel/lib/styles.css";
+import logo from "@asset/images/polygonlogo.png"
 import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import { setNfts } from "../../../../../../redux/actions/nftActions";
+import { setNfts, showCategories } from "../../../../../../redux/actions/nftActions";
 import { useEffect, } from 'react'
 import { HomeOptData } from "./HomeOptData.js";
+import * as BsIcons from 'react-icons/bs';
+import * as FiIcons from 'react-icons/fi';
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeDrops = () => {
@@ -32,6 +35,7 @@ const HomeDrops = () => {
     //     return data
     // }
     const nfts = useSelector((state) => state.allNfts.nfts);
+    const categories = useSelector((state) => state.allCategory.categories);
     const dispatch = useDispatch();
 
 
@@ -46,6 +50,17 @@ const HomeDrops = () => {
 
     }, [])
     /* eslint-enable */
+    useEffect(() => {
+        axios.get(`https://api-dev.nfting.store/api/nft-items/by-categories`)
+            .then(res => {
+                dispatch(showCategories(res.data))
+            }).catch((err) => {
+                console.log("Err ", err);
+            });
+
+    }, [])
+    /* eslint-enable */
+    console.log("categories: ", categories)
     // console.log("nfts: ", nfts)
 
     // console.log(nfts);
@@ -113,16 +128,15 @@ const HomeDrops = () => {
                                 key={index}
 
                             >
-                                <img
-                                    alt='title'
-                                    src={data.preview_image_url}
-                                    style={{
-                                        width: '100%',
-                                        height: 200,
-                                        textAlign: 'center',
-                                        borderRadius: '20px'
-                                    }}
-                                />
+                                <div className="nft-card-img position-relative">
+                                    <Link to={`/nft/${data.id}`} >
+                                        <div className="card-img-top" style={{ backgroundImage: `url(${data.preview_image_url})` }}>
+                                        </div>
+                                        <div className="overlay">
+                                            <button type="button" className="btn btn-secondary">Buy Now</button>
+                                        </div>
+                                    </Link>
+                                </div>
                                 <CardBody className="p-0 mt-2">
                                     <CardTitle tag="h5">
                                         <Link to={`/nft/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito', fontWeight: 800 }}>
@@ -138,13 +152,32 @@ const HomeDrops = () => {
                                                 style={{ height: 50, width: '100%', marginTop: 20, }}>
 
                                                 <div style={{ marginRight: '16px', }}>
-                                                    <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
+                                                    {/* <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} /> */}
                                                 </div>
                                                 <div className="">
-                                                    <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p>
+                                                    {/* <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p> */}
                                                 </div>
                                             </div>
                                         </Link>
+                                        <div className="nft-item-price d-flex align-items-center" >
+                                            <img src={logo} alt="" style={{ height: 16, width: 16, }} />
+                                            <h5 className="price mb-0" style={{ fontWeight: 500, fontFamily: 'nunito', lineHeight: 2, marginLeft: 5, textAlign: 'right' }}>{data.sale.selling_price}</h5>
+                                        </div>
+                                        <div className="nft-item-price d-flex justify-content-between align-items-center" style={{ zIndex: 2, position: 'relative' }} >
+                                            <div className="dropdown" >
+                                                <button className="btn btn-transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <BsIcons.BsThreeDots />
+                                                </button>
+                                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a className="dropdown-item" href="#">Share</a></li>
+                                                </ul>
+                                            </div>
+                                            <div className="d-flex align-items-center">
+                                                <button type='button' className='btn-multiple-state btn-follow border-0 p-0 shadow-none btn btn-link'>
+                                                    <FiIcons.FiHeart />
+                                                </button>
+                                            </div>
+                                        </div>
 
                                     </CardSubtitle>
                                 </CardBody>
@@ -157,12 +190,14 @@ const HomeDrops = () => {
             <div className="section">
                 <div className="categories">
                     <div className="categories-content">
-                        {HomeOptData.map((item, index) => {
+                        {categories && categories.map((items, index) => {
                             return (
                                 <div className="category" key={index}>
-                                    <i className="category-icon">{item.icons}</i>
-                                    <h6 className="category-name">{item.name}</h6>
-
+                                    {/* <Link to='/explore/:exploreId'> */}
+                                        <img className="category-icon" src={items.icon_url} alt="" />
+                                        {/* <i className="category-icon">{items.icon_url}</i> */}
+                                        <h6 className="category-name">{items.name}</h6>
+                                    {/* </Link> */}
                                 </div>
                             )
                         })}

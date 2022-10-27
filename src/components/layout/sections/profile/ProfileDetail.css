@@ -1,0 +1,59 @@
+.profile .jumbotron{
+    height: 230px;
+    width: 100%;
+    
+}
+
+.profile .nft-actions-buttons{
+    margin-top: 30px;
+}
+
+.primary-button {
+    background:  #433895;
+    color: #fff;
+    /* width: 120px; */
+    border-radius: 15px;
+    font-family: nunito;
+    padding: 10px 20px;
+    font-weight: 900;
+}
+
+.primary-button:hover{
+    font-weight: 600;
+    background:  #433895;
+    color: #fff;
+}
+
+.btn-share-icon { 
+    color: #433895;
+    border: 3px solid #433895;
+    border-radius: 15px;
+    font-family: nunito;
+    padding: 12px 12px;
+    font-weight: 900;
+}
+
+.btn-share-icon:hover{
+    font-weight: 600;
+    background:  #433895;
+    color: #fff;
+    border: 3px solid #433895;
+    
+}
+
+.profile .nft-header-details {
+    margin-left: 22px;
+    margin-right: 22px;
+    font-family: nunito;
+}
+
+.profile .nft-header-details .profile-owner-info{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+
+
+
+

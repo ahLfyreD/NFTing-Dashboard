@@ -7,10 +7,31 @@ export const setNfts = (nfts) => {
     };
 };
 
+export const showCategories = (categories) => {
+    return {
+        type: ActionTypes.SHOW_CATEGORY,
+        payload: categories,
+    };
+};
+
+export const showArtCategories = (artCategories) => {
+    return {
+        type: ActionTypes.SHOW_ARTCATEGORY,
+        payload: artCategories,
+    };
+};
+
 export const selectedNfts = (nft) => {
     return {
         type: ActionTypes.SELECTED_NFT,
         payload: nft, 
+    };
+};
+
+export const selectedProfiles = (profile) => {
+    return {
+        type: ActionTypes.SELECTED_PROFILE,
+        payload: profile, 
     };
 };
 

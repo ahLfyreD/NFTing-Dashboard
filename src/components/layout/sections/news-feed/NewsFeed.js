@@ -8,11 +8,11 @@ const News = () => {
   return (
     <div>
       <div className="">
-        <div className="d-flex justify-content-center"
-          style={{ height: 250, width: '100%', background: '#1e3a8a', }}>
+        <div className="d-flex justify-content-center align-items-center"
+          style={{ height: 250, width: '100%', background: 'linear-gradient(135deg,#5e4a9e,#443895)', }}>
           <div>
             <h1 className="text-center"
-              style={{ fontSize: 28, fontFamily: 'nunito', color: 'white', fontWeight: 800, margin: '30px 0px' }}>
+              style={{ fontSize: 30, fontFamily: 'nunito', color: 'white', fontWeight: 800, margin: '30px 0px' }}>
               Newsfeed & Blogs
             </h1>
             <div className="align-items-center d-flex justify-content-between"

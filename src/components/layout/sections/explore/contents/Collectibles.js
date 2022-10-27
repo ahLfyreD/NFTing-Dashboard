@@ -11,22 +11,20 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 
-const Arts = () => {
+const Collectibles = () => {
     const artCategories = useSelector((state) => state.allArtCategories.artCategories);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get(`https://api-dev.nfting.store/api/nft-items?page=1&limit=10&category_id=1`)
+        axios.get(`https://api-dev.nfting.store/api/nft-items?page=1&limit=10&category_id=2`)
             .then(res => {
-                dispatch(showArtCategories(res.items))
+                dispatch(showArtCategories(res.data.items))
             }).catch((err) => {
                 console.log("Err ", err);
             });
 
     }, [])
     /* eslint-enable */
-
-    
 
     
 
@@ -58,7 +56,7 @@ const Arts = () => {
                       style={{ width: '100%', height: 70, }}
                   >
                       <h1 className="head-title">
-                          Arts
+                          Collectibles
                       </h1>
                       <h2 className="head-option">View all</h2>
                   </div>
@@ -167,5 +165,5 @@ const Arts = () => {
     );
   };
   
-  export default Arts;
+  export default Collectibles;
   
