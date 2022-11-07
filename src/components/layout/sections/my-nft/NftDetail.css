@@ -73,6 +73,10 @@
     
 }
 
+.nft-view .section .nft-item-collection .nft-item-collection-name:hover{
+    text-decoration: underline;
+}
+
 .nft-view .section .nft-image-lg-container .nft-image-lg {
     background-position: 50%;
     background-size: cover;

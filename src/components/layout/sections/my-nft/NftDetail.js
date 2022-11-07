@@ -10,13 +10,14 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 // import {Card, CardBody} from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, CardBody } from 'reactstrap';
+import { Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap';
 
 
 
 const NftDetail = () => {
 
   const nft = useSelector((state) => state.nft);
+  const nfts = useSelector((state) => state.allNfts.nfts);
   const { title, media_url, owner_address, owner_url,
     collection, blockchain,
     token_id, contract_type, royalties,
@@ -40,6 +41,18 @@ const NftDetail = () => {
   useEffect(() => {
     if (nftId && nftId !== "") fetchNftDetail();
   }, [nftId]);
+  /* eslint-enable */
+
+  /* eslint-disable */
+  useEffect(() => {
+    axios.get(`https://api-dev.nfting.store/api/nft-items?page=1&limit=4`)
+      .then(res => {
+        dispatch(setNfts(res.data.items))
+      }).catch((err) => {
+        console.log("Err ", err);
+      });
+
+  }, [])
   /* eslint-enable */
 
 
@@ -84,7 +97,7 @@ const NftDetail = () => {
 
                         <div className='nft-item-owner d-flex flex-row align-items-center'>
                           <div className='nft-owner-img rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%' }}>
-                            
+
                           </div>
                           <a href={owner_url} className='nft-item-owner-name'>{owner_address}</a>
                         </div>
@@ -94,7 +107,7 @@ const NftDetail = () => {
                         <Link to={`/collections/${collection.slug}`} className='nft-item-collection d-flex flex-row align-items-center'>
 
                           <div className='nft-collection-img rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%' }}>
-                            
+
                           </div>
                           <p className='nft-item-collection-name mb-0'>{collection.name}</p>
                         </Link>
@@ -224,9 +237,86 @@ const NftDetail = () => {
               <div className="section">
                 <div className="d-flex align-items-baseline justify-content-between">
                   <h2 className='section-title mb-0'>Others in collection</h2>
-                  <Link to={"/"} className='link-view-all' style={{ textDecoration: 'none', color: '#000', fontFamily: 'nunito', fontSize: 20 }}>View all</Link>
+                  <Link to={`/collections/${collection.slug}`} className='link-view-all' style={{ textDecoration: 'none', color: '#000', fontFamily: 'nunito', fontSize: 20 }}>View all</Link>
                 </div>
                 <hr style={{ height: '1px' }} />
+
+                <div className="row mt-5">
+                  {nfts.map((data, index) => (
+                    <div className="col-md-6 col-lg-4 col-xl-3 mb-4"
+                      key={index}>
+                      <Card className="nft-card">
+                        <div className="nft-card-img position-relative" style={{ zIndex: 0, }}>
+                          <Link to={`/nft/${data.id}`} >
+                            <div className="card-img-top" style={{ backgroundImage: `url(${data.preview_image_url})` }}>
+                            </div>
+                            <div className="overlay">
+                              <button type="button" className="btn btn-secondary">Buy Now</button>
+                            </div>
+                          </Link>
+                        </div>
+                        <CardBody className="p-0 mt-2">
+                          <CardTitle tag="h5">
+                            <Link className='data-title' to={`/nft/${data.id}`} style={{ fontFamily: 'nunito', fontWeight: 800 }}>
+                              {data.title}
+                            </Link>
+                          </CardTitle>
+                          <CardSubtitle
+                            className="mb-2"
+                            tag="h6"
+                          >
+                            <div style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
+                              <div className="d-flex align-items-center"
+                                style={{ height: 50, width: '125px', marginTop: 20, }}>
+
+                                <div className='d-flex flex-row align-items-center'>
+                                  <div className='rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%', background: '#def3fc' }}>
+
+                                  </div>
+                                  <a href={data.owner_url}
+                                    className=''
+                                    style={{
+                                      width: '',
+                                      textOverflow: "ellipsis",
+                                      overflow: "hidden",
+                                    }}>
+                                    {/* {data.owner_address} */}
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="nft-item-price d-flex align-items-center" >
+                              <img src={logo} alt="" style={{ height: 16, width: 16, }} />
+                              <h5 className="price mb-0" style={{ fontWeight: 500, fontFamily: 'nunito', lineHeight: 2, marginLeft: 5, textAlign: 'right' }}>{data.sale.selling_price}</h5>
+                            </div>
+                            <div className="nft-item-price d-flex justify-content-between align-items-center" style={{ zIndex: 0, position: 'relative' }} >
+                              <div className="dropdown" >
+                                <button className="btn btn-transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <BsIcons.BsThreeDots />
+                                </button>
+                                {/* eslint-disable */}
+                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a className="dropdown-item">Share</a></li>
+                                </ul>
+                                {/* eslint-enable */}
+                              </div>
+                              <div className="d-flex align-items-center">
+                                <button type='button' className='btn-multiple-state btn-follow border-0 p-0 shadow-none btn btn-link'>
+                                  <FiIcons.FiHeart />
+                                </button>
+                              </div>
+                            </div>
+
+                          </CardSubtitle>
+                        </CardBody>
+                      </Card>
+
+                    </div>
+
+                  ))}
+
+
+                </div>
 
 
 

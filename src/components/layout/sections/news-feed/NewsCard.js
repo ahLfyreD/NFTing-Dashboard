@@ -88,8 +88,8 @@ const NewsCard = () => {
                     <div className="row">
                         {blogs.map((data, index) => {
                             return (
-                                <div className="col-md-3" style={{ marginBottom: 30, }} key={index}>
-                                    <Card className="card" style={{ height: 450, cursor: 'pointer' }} >
+                                <div className="mb-4 col-md-6 col-lg-4 col-xl-3"key={index}>
+                                    <Card className="card" style={{ height: 450, cursor: 'pointer', borderRadius: 15, }} >
                                         <img
                                             className="news-img"
                                             alt='title'

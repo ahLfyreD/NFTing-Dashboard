@@ -74,9 +74,9 @@ const HomeNews = () => {
             <div className="news-feed">
                 <div className="row">
                     {blogs.map((data, index) => (
-                        <div className="col-md-3"
+                        <div className="col-md-6 col-lg-4 col-xl-3 mb-4"
                             key={index}>
-                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 450, cursor: 'pointer' }}>
+                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 450, cursor: 'pointer', borderRadius: 15, }}>
                                 <img
                                     className="news-img"
                                     alt=""
@@ -107,93 +107,6 @@ const HomeNews = () => {
                         </div>
 
                     ))}
-                    {/* <div className="col-md-3">
-                        <Card className="card" style={{ height: 400, cursor: 'pointer' }}>
-                            <img
-                                className="news-img"
-                                alt=""
-                                src={nft} />
-                            <CardBody>
-                                <CardTitle
-                                    className="news-text mb-3"
-                                    tag="h5">
-                                    r/nfting - r/nfting Lounge
-                                </CardTitle>
-
-                                <CardText className="news-content">
-                                    1 vote and 0 comments so far on Reddit
-                                </CardText>
-
-                            </CardBody>
-                        </Card>
-                    </div>
-                    <div className="col-md-3">
-                        <Card className="card" style={{ height: 400, cursor: 'pointer' }}>
-                            <img
-                                className="news-img"
-                                alt="Sample"
-                                src={nftAll}
-                            />
-                            <CardBody>
-                                <CardTitle
-                                    className="news-text mb-3"
-                                    tag="h5">
-                                    Welcome to NFTing Store
-                                </CardTitle>
-
-                                <CardText className="news-content">
-                                    A fresh and exciting project is about to launch that aims to
-                                    solve the shortcomings of current NFT marketplaces — having to pay
-                                    expensive…
-                                </CardText>
-
-                            </CardBody>
-                        </Card>
-                    </div>
-                    <div className="col-md-3">
-                        <Card className="card" style={{ height: 400, cursor: 'pointer' }}>
-                            <img
-                                className="news-img"
-                                alt=""
-                                src={nftIntro}
-                            />
-                            <CardBody>
-                                <CardTitle
-                                    className="news-text mb-3"
-                                    tag="h5">
-                                    NFTing Start Prelisting for Artists and Projects
-                                </CardTitle>
-
-                                <CardText className="news-content">
-                                    NFT artists and/or creators of all experience levels,
-                                    sign up for our prelisting today without the added cost and risks!
-                                </CardText>
-
-                            </CardBody>
-                        </Card>
-                    </div>
-                    <div className="col-md-3">
-                        <Card className="card" style={{ height: 400, cursor: 'pointer' }}>
-                            <img
-                                className="news-img"
-                                alt=""
-                                src={nftObject}
-                            />
-                            <CardBody>
-                                <CardTitle
-                                    className="news-text mb-3"
-                                    tag="h5">
-                                    More Than Just a Marketplace… An Entire Ecosystem
-                                </CardTitle>
-
-                                <CardText className="news-content">
-                                    After handling several successful projects in the blockchain and
-                                    NFT spaces, Kerel Verwaerde, the CEO & Founder, realized that the most…
-                                </CardText>
-
-                            </CardBody>
-                        </Card>
-                    </div> */}
                 </div>
             </div>
         </div>

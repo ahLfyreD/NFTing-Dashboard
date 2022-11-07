@@ -1,0 +1,94 @@
+.nft-action-buttons {
+    margin-top: 22px;
+    font-family: nunito;
+}
+
+.nft-action-buttons .btn-action{
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    height: 45px;
+    letter-spacing: 0;
+    line-height: 16px;
+    min-width: 135px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #5e4a9e, #443895);
+}
+
+.nft-action-buttons .btn-action:hover{
+    font-weight: 550;
+}
+
+.nft-action-buttons .btn-share-icon{
+    fill: #443895;
+    stroke: #443895;
+    color: #443895;
+    height: 45px;
+    width: 45px;
+    border-radius: 15px;
+    border: 3px solid #443895;
+    box-shadow: 2.3px 2.3px 2.3px 0 rgb(0, 0, 0, 0.15)
+}
+
+.nft-action-buttons .btn-share-icon:hover{
+    color: #fff;
+    background: #443895;
+}
+
+.nft-header-details{
+    margin-left: 22px;
+    margin-right: 22px;
+    font-family: nunito;
+}
+
+.nft-header-details .profile-owner-info{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.nft-header-details .profile-owner-info .name{
+    color: #000;
+    flex: 1 1 auto;
+    letter-spacing: 0;
+    font-weight: 800;
+}
+
+.nft-header-details .description{
+    margin-bottom: 22px;
+}
+
+.nft-header-details .description h5{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+
+.nft-header-details .description h5 a{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.nft-header-details .description h5 a:hover{
+    text-decoration: underline;
+}
+
+
+.nft-header-details .stats{
+    color: #4b516d;
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 22px;
+}
+
+.nft-header-details .stats .stats-value{
+    margin-right: 25px;
+    font-weight: 800;
+}

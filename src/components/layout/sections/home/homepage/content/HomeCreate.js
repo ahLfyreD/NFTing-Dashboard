@@ -14,7 +14,7 @@ const HomeCreate = () => {
       </h1>
       <div className="row justify-content-center mt-10" style={{ margin: '2rem 1.1rem' }}>
         {/* Each column contains components with images, a radio button and a name of the collector. */}
-        <div className="col text-center m-2 p-3 ">
+        <div className="col-md-6 col-lg-3 text-center p-3 ">
           <IoIcons.IoMdWallet className="create-icon" />
           <h3 className='news-text'>Setup Your Wallet</h3>
           <p className="news-content">
@@ -22,7 +22,7 @@ const HomeCreate = () => {
             by clicking the wallet icon in the top right corner of the website.
           </p>
         </div>
-        <div className="col text-center m-2 p-3">
+        <div className="col-md-6 col-lg-3 text-center p-3">
           <MdIcons.MdCollectionsBookmark className="create-icon" />
           <h3 className="news-text">Create your collection</h3>
           <p className="news-content">
@@ -30,7 +30,7 @@ const HomeCreate = () => {
             description, social & banner images, and set a secondary sales fees.
           </p>
         </div>
-        <div className=" col text-center m-2 p-3">
+        <div className=" col-md-6 col-lg-3 text-center p-3">
           <MdIcons.MdLibraryAdd className="create-icon" />
           <h3 className="news-text">Add your NFTs</h3>
           <p className="news-content">
@@ -39,7 +39,7 @@ const HomeCreate = () => {
             properties, stats and unlockable contents.
           </p>
         </div>
-        <div className=" col text-center m-2 p-3">
+        <div className=" col-md-6 col-lg-3 text-center p-3">
           <BsIcons.BsFillTagsFill className="create-icon" />
           <h3 className="news-text">List them for sale</h3>
           <p className="news-content">

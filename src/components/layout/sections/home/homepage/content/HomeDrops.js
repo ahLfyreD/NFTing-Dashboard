@@ -48,9 +48,9 @@ const HomeDrops = () => {
             });
 
     }, [])
-    /* eslint-disable */
+    
     useEffect(() => {
-        axios.get(`https://api-dev.nfting.store/api/nft-items/by-categories`)
+        axios.get(`https://api-dev.nfting.store/api/nft-categories`)
             .then(res => {
                 dispatch(showCategories(res.data))
             }).catch((err) => {
@@ -89,7 +89,7 @@ const HomeDrops = () => {
                     <h1 className="head-title">
                         Latest / Notable Drops
                     </h1>
-                    <h2 className="head-option">View all</h2>
+                    <h2 className="head-option"><Link to={`/explore/id`}>View all</Link></h2>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
@@ -138,7 +138,7 @@ const HomeDrops = () => {
                                 </div>
                                 <CardBody className="p-0 mt-2">
                                     <CardTitle tag="h5">
-                                        <Link to={`/nft/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito', fontWeight: 800 }}>
+                                        <Link className="data-title" to={`/nft/${data.id}`} style={{ fontFamily: 'nunito', fontWeight: 800 }}>
                                             {data.title}
                                         </Link>
                                     </CardTitle>
@@ -157,6 +157,7 @@ const HomeDrops = () => {
                                                     <a href={data.owner_url}
                                                         className=''
                                                         style={{
+                                                            width: '',
                                                             textOverflow: "ellipsis",
                                                             overflow: "hidden",
                                                         }}>
@@ -200,13 +201,13 @@ const HomeDrops = () => {
                     <div className="categories-content">
                         {categories && categories.map((items, index) => {
                             return (
-                                <div className="category" key={index}>
+                                <Link to="/explore/id" className="category" key={index}>
                                     {/* <Link to='/explore/:exploreId'> */}
                                     <img className="category-icon" src={items.icon_url} alt="" />
                                     {/* <i className="category-icon">{items.icon_url}</i> */}
                                     <h6 className="category-name">{items.name}</h6>
                                     {/* </Link> */}
-                                </div>
+                                </Link>
                             )
                         })}
                     </div>

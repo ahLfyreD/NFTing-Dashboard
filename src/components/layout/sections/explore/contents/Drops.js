@@ -77,7 +77,7 @@ const HomeDrops = () => {
                     <h1 className="head-title">
                         Latest / Notable Drops
                     </h1>
-                    <h2 className="head-option">View all</h2>
+                    <h2 className="head-option"><Link to="/explore/id">View all</Link></h2>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
@@ -126,7 +126,7 @@ const HomeDrops = () => {
                                 </div>
                                 <CardBody className="p-0 mt-2">
                                     <CardTitle tag="h5">
-                                        <Link to={`/nft/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito', fontWeight: 800 }}>
+                                        <Link className="data-title" to={`/nft/${data.id}`} style={{ fontFamily: 'nunito', fontWeight: 800 }}>
                                             {data.title}
                                         </Link>
                                     </CardTitle>

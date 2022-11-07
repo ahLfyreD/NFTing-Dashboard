@@ -9,10 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import img2 from '@asset/images/picture.jpg'
 // import { Link } from 'react-router-dom'
 import NftDetail from "@components/layout/sections/my-nft/NftDetail";
-import ProfileDetail from "@components/layout/sections/profile/ProfileDetail";
+// import ProfileDetail from "@components/layout/sections/profile/ProfileDetail";
 import CollectionDetail from "@components/layout/sections/collection/CollectionDetail"
 import NewsFeed from "@components/layout/sections/news-feed/NewsFeed";
 import Explore from "@components/layout/sections/explore/Explore";
+import ExploreId from "@components/layout/sections/explore/ExploreId";
 import Terms from "@components/layout/sections/terms/Terms";
 import Privacy from "@components/layout/sections/terms/Privacy";
 import Footer from '@components/layout/footer/Footer'
@@ -58,12 +59,12 @@ function App() {
                   <div className="app-content">
                     <Routes>
                       <Route path="/explore" element={<Explore />} />
-                      {/* <Route path="/explore/:exploreId" element={<Explore />} /> */}
+                      <Route path="/explore/id" element={<ExploreId />} />
                       <Route path="/terms-of-services" element={<Terms />} />
                       <Route path="/privacy" element={<Privacy />} />
                       <Route path="/newsfeed" element={<NewsFeed />} />
                       <Route path="/nft/:nftId" element={<NftDetail />} />
-                      <Route path="/profile/:profileId" element={<ProfileDetail />} />
+                      {/* <Route path="/profile/:profileId" element={<ProfileDetail />} /> */}
                       <Route path="/collections/:collectionId" element={<CollectionDetail />} />
 
                       <Route path="/" element={<HomePage />} />

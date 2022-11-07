@@ -1,0 +1,29 @@
+.home{
+    padding: 1.2rem 1.2rem 0;
+    position: relative;
+}
+
+.home .section{
+    position: relative;
+}
+
+.home .section .filter-group{
+    padding: 15px 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.home .section .filter-group .filter-actions{
+    margin-top: 25px;
+}
+
+.home .section .filter-group .filter-actions .filter-btn{
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    font-size: 20px;
+    font-family: nunito;
+    min-width: 270px;
+    text-align: start;
+}
