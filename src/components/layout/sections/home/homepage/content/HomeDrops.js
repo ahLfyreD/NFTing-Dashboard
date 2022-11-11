@@ -89,7 +89,7 @@ const HomeDrops = () => {
                     <h1 className="head-title">
                         Latest / Notable Drops
                     </h1>
-                    <h2 className="head-option"><Link to={`/explore/id`}>View all</Link></h2>
+                    <Link to="/explore/id" style={{textDecoration: 'none', color: 'black'}}><h2 className="head-option">View all</h2></Link>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>

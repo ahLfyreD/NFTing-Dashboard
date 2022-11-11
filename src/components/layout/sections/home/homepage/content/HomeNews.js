@@ -67,7 +67,7 @@ const HomeNews = () => {
                     <h1 className="head-title">
                         Newsfeed & Blogs
                     </h1>
-                    <h2 className="head-option"><Link to={"/newsfeed"}>View all</Link></h2>
+                    <Link to="/newsfeed" style={{textDecoration: 'none', color: 'black'}}><h2 className="head-option">View all</h2></Link>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
@@ -76,7 +76,7 @@ const HomeNews = () => {
                     {blogs.map((data, index) => (
                         <div className="col-md-6 col-lg-4 col-xl-3 mb-4"
                             key={index}>
-                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 450, cursor: 'pointer', borderRadius: 15, }}>
+                            <Card className="card d-flex flex-col justify-content-around position-relative" style={{ height: 425, cursor: 'pointer', borderRadius: 15, }}>
                                 <img
                                     className="news-img"
                                     alt=""

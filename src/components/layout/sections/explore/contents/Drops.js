@@ -75,9 +75,10 @@ const HomeDrops = () => {
                     style={{ width: '100%', height: 70, }}
                 >
                     <h1 className="head-title">
+                        <span style={{marginRight: 10,}}><BsIcons.BsLightning /></span>
                         Latest / Notable Drops
                     </h1>
-                    <h2 className="head-option"><Link to="/explore/id">View all</Link></h2>
+                    <Link to="/explore/id" style={{textDecoration: 'none', color: 'black'}}><h2 className="head-option">View all</h2></Link>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>

@@ -12,7 +12,7 @@ const ResetModal = ({ onClose, modal, toggle, args, login }) => {
   // if (!visible) return null;
 
   return (
-    <div>
+    <div style={{overflow: 'auto'}}>
       <Modal isOpen={modal} toggle={toggle} {...args} contentClassName='p-3'>
         <ModalHeader className="border-0" toggle={toggle}>
           <div className="title" onClick={login}>
