@@ -94,6 +94,7 @@ const ProfileDetail = () => {
                         </div>
                         <div className="nft-collections gx-0 row">
                             <div className="col-sm-12 p-3">
+                                {/* eslint-disable */}
                                 <ul className="nft-item-tabs nav nav-tabs mb-3" id="nav-tab" role="tablist">
                                     <li className="nav-item" role="presentation">
                                         <a className="nav-link active" id="nav-created-tab" data-bs-toggle="pill" data-bs-target="#nav-created" role="tab" aria-controls="nav-created" aria-selected="true">Created</a>
@@ -123,6 +124,7 @@ const ProfileDetail = () => {
                                         </a>
                                     </li>
                                 </ul>
+                                {/* eslint-enable */}
                             </div>
                             <div className="tab-content p-3" id="nav-tabContent">
                                 <div className="tab-pane fade show active" id="nav-created" role="tabpanel" aria-labelledby="nav-created-tab">
