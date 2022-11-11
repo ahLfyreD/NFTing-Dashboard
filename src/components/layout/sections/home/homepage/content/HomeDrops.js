@@ -48,7 +48,7 @@ const HomeDrops = () => {
             });
 
     }, [])
-    
+
     useEffect(() => {
         axios.get(`https://api-dev.nfting.store/api/nft-categories`)
             .then(res => {
@@ -123,7 +123,7 @@ const HomeDrops = () => {
                     {nfts.map((data, index) => {
                         return (
 
-                            <Card className="nft-card"
+                            <Card className="nft-card position-relative"
                                 key={index}
 
                             >
@@ -147,22 +147,26 @@ const HomeDrops = () => {
                                         tag="h6"
                                     >
                                         <div style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
-                                            <div className="d-flex align-items-center"
-                                                style={{ height: 50, width: '125px', marginTop: 20, }}>
+                                            <div className="d-flex align-items-center w-100"
+                                                style={{ marginTop: 20, }}>
 
-                                                <div className='d-flex flex-row align-items-center'>
-                                                    <div className='rounded-circle' style={{ height: 27, width: 27, borderRadius: '50%', background: '#def3fc' }}>
+                                                <div className='d-flex flew-row align-items-center'>
+                                                    <div className='rounded-circle' style={{
+                                                        height: 27, width: 27, borderRadius: '50%', backgroundImage: `url(${data.owner.profile_picture})`,
+                                                        backgroundSize: 'cover'
+                                                    }}>
 
                                                     </div>
-                                                    <a href={data.owner_url}
-                                                        className=''
-                                                        style={{
-                                                            width: '',
-                                                            textOverflow: "ellipsis",
-                                                            overflow: "hidden",
-                                                        }}>
-                                                            {/* {data.owner_address} */}
-                                                        </a>
+                                                    <div style={{
+                                                                marginLeft: 10,
+
+                                                            }}>
+                                                        <Link to={`/profile/${data.owner.code}`}
+                                                            className='profile-title'                                                            
+                                                        >
+                                                            {data.owner.display_name}
+                                                        </Link>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

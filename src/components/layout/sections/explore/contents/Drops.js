@@ -134,18 +134,30 @@ const HomeDrops = () => {
                                         className="mb-2"
                                         tag="h6"
                                     >
-                                        {/* <Link to={`/profile/${data.id}`} style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
-                                            <div className="d-flex align-items-center"
-                                                style={{ height: 50, width: '100%', marginTop: 20, }}>
+                                         <div style={{ textDecoration: 'none', color: "#000", fontFamily: 'nunito' }}>
+                                            <div className="d-flex align-items-center w-100"
+                                                style={{ marginTop: 20, }}>
 
-                                                <div style={{ marginRight: '16px', }}>
-                                                    <img src={data.owner.profile_picture} alt="" style={{ height: 25, width: 25, borderRadius: '50%' }} />
-                                                </div>
-                                                <div className="">
-                                                    <p style={{ fontSize: 15, fontFamily: 'nunito' }}>{data.owner.display_name}</p>
+                                                <div className='d-flex flew-row align-items-center'>
+                                                    <div className='rounded-circle' style={{
+                                                        height: 27, width: 27, borderRadius: '50%', backgroundImage: `url(${data.owner.profile_picture})`,
+                                                        backgroundSize: 'cover'
+                                                    }}>
+
+                                                    </div>
+                                                    <div style={{
+                                                                marginLeft: 10,
+
+                                                            }}>
+                                                        <Link to={`/profile/${data.owner.code}`}
+                                                            className='profile-title'                                                            
+                                                        >
+                                                            {data.owner.display_name}
+                                                        </Link>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </Link> */}
+                                        </div>
                                         <div className="nft-item-price d-flex align-items-center" >
                                             <img src={logo} alt="" style={{ height: 16, width: 16, }} />
                                             <h5 className="price mb-0" style={{ fontWeight: 500, fontFamily: 'nunito', lineHeight: 2, marginLeft: 5, textAlign: 'right' }}>{data.sale.selling_price}</h5>

@@ -48,6 +48,7 @@ body {
   border-left: 10px;
   border-top-right-radius: 10px;
   padding: 60px;
+  display: flex;
 }
 
 .carousel-container {
@@ -152,7 +153,7 @@ body {
 /* } */
 
 .multi-carousel .react-multi-carousel-collapse {
-  width: calc(100vw - 260px - 2.5rem);
+  max-width: calc(100vw - 260px - 2.5rem);
   padding-left: 10px;
   /* background: black; */
 }
@@ -215,11 +216,20 @@ body {
   text-decoration: underline;
   color: #1e3a8a;
 }
+.nft-card .profile-title{
+  color: #000;
+  text-decoration: none;
+}
+
+.nft-card .profile-title:hover{
+  text-decoration: underline;
+  color: #1e3a8a;
+}
 
 .categories {
-  /* display: block; */
+  display: block;
   margin-bottom: 4rem;
-  /* margin-right: -27px; */
+  margin-right: -27px;
   margin: 0 auto;
   overflow-x: auto;
   text-align: center;
