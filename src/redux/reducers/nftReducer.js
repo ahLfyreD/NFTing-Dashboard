@@ -6,9 +6,7 @@ const initialStates = {
 const initialCategory = {
     categories: []        
 };
-const initialArtCategory = {
-    categories: []        
-};
+
 export const nftReducer = (state = initialStates, { type, payload }) => {
     switch (type) {
         case ActionTypes.SET_NFTS:
@@ -27,14 +25,7 @@ export const categoryReducer = (state = initialCategory, { type, payload }) => {
     };
 };
 
-export const artCategoryReducer = (state = initialArtCategory, { type, payload }) => {
-    switch (type) {
-        case ActionTypes.SHOW_ARTCATEGORY:
-            return {...state, artCategories: payload}
-        default:
-            return state;
-    };
-};
+
 
 export const selectedNftReducer = (state = {}, { type, payload }) => {
     switch (type) {

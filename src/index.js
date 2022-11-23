@@ -5,6 +5,7 @@ import './index.css';
 import './i18next';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,9 +14,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    {/* <BrowserRouter> */}
+      <Provider store={store}>
+        {/* <Routes>
+          <Route path="/*" element={<App />} />         
+        </Routes> */}
+        <App />
+      </Provider>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );
 

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { nftReducer, selectedNftReducer, selectedProfileReducer, categoryReducer, artCategoryReducer } from './nftReducer';
+import { nftReducer, selectedNftReducer, selectedProfileReducer, categoryReducer } from './nftReducer';
 import { newsReducer } from './newsReducer';
 
 
@@ -9,7 +9,6 @@ const allReducers = combineReducers ({
     nft: selectedNftReducer,
     profile: selectedProfileReducer,
     allCategory: categoryReducer,
-    allArtCategories: artCategoryReducer,
 });
 
 export default allReducers

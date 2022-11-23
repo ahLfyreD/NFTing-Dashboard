@@ -1,10 +1,3 @@
-// import { HomeNewsData } from "./HomeNewsData.js";
-// import { Card } from "@components/card/Card";
-// import world from "@asset/images/image3.jpg";
-// import nft from '../../../../../../asset/images/nft.png'
-// import nftAll from '../../../../../../asset/images/nftAll.jpeg'
-// import nftIntro from '../../../../../../asset/images/nftIntro.jpeg'
-// import nftObject from '../../../../../../asset/images/nftObject.png'
 import { Link } from 'react-router-dom';
 import icon from "@asset/images/icon.svg";
 import axios from 'axios'
@@ -14,25 +7,7 @@ import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeNews = () => {
-    // https://api-dev.nfting.store/api/news
-    // const [newsData, setNewsData] = useState([])
-
-    // useEffect(() => {
-
-    //     const getNewsData = async () => {
-    //         const newsDataFromServer = await fetchNewsData()
-    //         setNewsData(newsDataFromServer)
-    //     }
-
-    //     getNewsData()
-    // }, []);
-
-    // const fetchNewsData = async () => {
-    //     const res = await fetch('http://localhost:5000/newsData')
-    //     const data = await res.json()
-
-    //     return data
-    // }
+    
 
     const tempFetchNewsFuncd = useRef()
     const blogs = useSelector((state) => state.allNews.blogs);

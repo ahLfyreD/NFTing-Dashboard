@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: auto !important;
 }
 *,
 *::after,
@@ -163,7 +164,6 @@ body {
 .nft-card {
   border-radius: 15px !important;
   padding: 20px;
-  width: 239px;
 }
 .nft-card .nft-card-img {
   z-index: 2;

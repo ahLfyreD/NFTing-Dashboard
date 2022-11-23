@@ -59,7 +59,7 @@ function App() {
                   <div className="app-content">
                     <Routes>
                       <Route path="/explore" element={<Explore />} />
-                      <Route path="/explore/id" element={<ExploreId />} />
+                      <Route path="/explore/:categoryId" element={<ExploreId />} />
                       <Route path="/terms-of-services" element={<Terms />} />
                       <Route path="/privacy" element={<Privacy />} />
                       <Route path="/newsfeed" element={<NewsFeed />} />

@@ -89,7 +89,7 @@ const HomeDrops = () => {
                     <h1 className="head-title">
                         Latest / Notable Drops
                     </h1>
-                    <Link to="/explore/id" style={{textDecoration: 'none', color: 'black'}}><h2 className="head-option">View all</h2></Link>
+                    <h2 className="head-option"><Link to={`/explore/lastest`} style={{textDecoration: 'none', color: 'black'}}>View all</Link></h2>
                 </div>
                 <hr style={{ height: '1px', }} />
             </div>
@@ -120,6 +120,7 @@ const HomeDrops = () => {
                     slidesToSlide={2}
                     swipeable
                 >
+                    
                     {nfts.map((data, index) => {
                         return (
 
@@ -203,9 +204,9 @@ const HomeDrops = () => {
             <div className="section">
                 <div className="categories">
                     <div className="categories-content">
-                        {categories && categories.map((items, index) => {
+                        {categories.map((items, index) => {
                             return (
-                                <Link to="/explore/id" className="category" key={index}>
+                                <Link to={`/explore/${items.id}`} className="category" key={index}>
                                     {/* <Link to='/explore/:exploreId'> */}
                                     <img className="category-icon" src={items.icon_url} alt="" />
                                     {/* <i className="category-icon">{items.icon_url}</i> */}
